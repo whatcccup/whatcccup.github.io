@@ -1,0 +1,37 @@
+site_name: 测测的 AI 笔记
+site_description: AI 工具、知识管理与可复用工作流教程
+
+theme:
+  name: material
+  language: zh
+  logo: assets/mark.svg
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - content.code.copy
+  font: false
+
+plugins:
+  - search
+  - awesome-pages
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/tag-filter.js
+
+copyright: 内容采用 Markdown 维护 · 测测的 AI 笔记
