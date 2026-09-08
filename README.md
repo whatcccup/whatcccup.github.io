@@ -2,6 +2,17 @@
 
 使用 Material for MkDocs 构建的 Markdown 网站。
 
+## 新增：Codex 规则整理教程与完整提示词
+
+从小红书图文过来的读者，可以直接打开下面的资料：
+
+- [完整教程：GPT-6 Astra 升级后，怎样整理 AGENTS.md 与 Skills](docs/tutorials/codex/astra-agents-skills.md)
+- [可复制提示词：单项目完整试用版、全量正式修改版、完整基础版](docs/tutorials/codex/astra-agents-skills-prompts.md)
+- [下载全部提示词与教程 ZIP](docs/downloads/astra-agents-skills/astra-agents-skills-complete-kit.zip)
+- [打开排版后的提示词页面](https://whatcccup.github.io/tutorials/codex/astra-agents-skills-prompts/)
+
+完整基础提示词为 6,829 字符。单项目版和全量版保留全部要求，只在开头补充本次运行参数，默认不启动子 Agent。教程中的项目范围与 Skills 采用匿名说明。
+
 ## 教程目录
 
 教程按主题文件夹组织：

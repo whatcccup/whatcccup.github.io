@@ -14,11 +14,17 @@ hide:
 <p class="home-lead">你好，我是测测。这里整理我实际使用的 AI 工具、知识管理方法和个人 Projects。教程尽量写清楚完整步骤，视频统一放在 B 站。</p>
 
 <div class="home-index">
-  <a href="tutorials/" markdown><strong>教程</strong><span>从 Obsidian 开始，记录可以重复使用的工作流。</span></a>
+  <a href="tutorials/" markdown><strong>教程</strong><span>Codex、Obsidian 与可以重复使用的工作流。</span></a>
   <a href="projects/" markdown><strong>Projects</strong><span>查看“测测的 AI 笔记”与 LegalTech CC。</span></a>
 </div>
 
 </section>
+
+## 最新教程：Codex 规则整理
+
+GPT-6 Astra 升级后，怎样整理 AGENTS.md 和 Skills，让小任务少走无关流程？这份教程提供实际改法、19 个项目的匿名结果，以及可直接复制的完整提示词。
+
+[阅读完整教程](tutorials/codex/astra-agents-skills.md) · [复制提示词与全量修改版](tutorials/codex/astra-agents-skills-prompts.md)
 
 ## 关于我
 

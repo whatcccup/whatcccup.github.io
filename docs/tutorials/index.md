@@ -4,11 +4,16 @@ hide:
   - toc
 ---
 
-<span class="course-kicker">TUTORIALS · 04</span>
+<span class="course-kicker">TUTORIALS · 06</span>
 
 # 从一个能用的工作流开始
 
-<p class="course-lead">首批教程集中在 Obsidian：采集视频、转录字幕、连接本地 Agent，以及用 iPhone 快速记录。每篇都可以只看 Markdown，也可以直接播放对应的 B 站课程。</p>
+<p class="course-lead">从 Codex 规则整理，到 Obsidian 视频采集、字幕转录和移动记录。每篇都提供可阅读的完整步骤；适用的教程另附提示词、下载文件或 B 站课程。</p>
+
+## Codex
+
+1. [GPT-6 Astra 升级后，怎样整理 AGENTS.md 与 Skills](codex/astra-agents-skills.md)
+2. [完整提示词与全量修改版](codex/astra-agents-skills-prompts.md)
 
 ## Obsidian
 

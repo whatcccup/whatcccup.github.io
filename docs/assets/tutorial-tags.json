@@ -7,9 +7,32 @@
     "AI Agent",
     "Skills",
     "快捷指令",
-    "移动效率"
+    "移动效率",
+    "AGENTS.md",
+    "Codex",
+    "提示词"
   ],
   "tutorials": [
+    {
+      "path": "tutorials/codex/astra-agents-skills-prompts/",
+      "title": "Codex 规则整理：完整提示词与全量修改版",
+      "tags": [
+        "Codex",
+        "Skills",
+        "AGENTS.md",
+        "提示词"
+      ]
+    },
+    {
+      "path": "tutorials/codex/astra-agents-skills/",
+      "title": "GPT-6 Astra 升级了，你的 Codex 还在用旧规则？",
+      "tags": [
+        "Codex",
+        "Skills",
+        "AGENTS.md",
+        "AI Agent"
+      ]
+    },
     {
       "path": "tutorials/obsidian/claudian-theschema-setup/",
       "title": "Claudian 完整安装与 Skill 配置",

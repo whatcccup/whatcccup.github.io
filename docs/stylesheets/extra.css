@@ -332,6 +332,29 @@ input {
   padding-top: 3rem;
 }
 
+.md-typeset .prompt-copy-block .highlight {
+  margin: 1rem 0 2rem;
+  border: 1px solid var(--hairline);
+}
+
+.md-typeset .prompt-copy-block pre {
+  max-height: 32rem;
+  overflow: auto;
+}
+
+.md-typeset .prompt-copy-block pre code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-height: 1.85;
+  padding-top: 2.8rem;
+}
+
+.md-typeset .prompt-copy-block .md-code__button {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
 .home-index,
 .project-list {
   display: grid;
