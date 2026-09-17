@@ -9,6 +9,7 @@
     "快捷指令",
     "移动效率",
     "AGENTS.md",
+    "ChatGPT",
     "Codex",
     "提示词"
   ],
@@ -30,6 +31,16 @@
         "Codex",
         "Skills",
         "AGENTS.md",
+        "AI Agent"
+      ]
+    },
+    {
+      "path": "tutorials/codex/codex-with-chatgpt/",
+      "title": "Codex 额度不够用？这个 5000 Star 的 Skill，帮你“白嫖”ChatGPT 额度",
+      "tags": [
+        "Codex",
+        "ChatGPT",
+        "Skills",
         "AI Agent"
       ]
     },

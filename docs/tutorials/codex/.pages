@@ -1,6 +1,7 @@
 title: Codex
 nav:
   - index.md
+  - codex-with-chatgpt.md
   - astra-agents-skills.md
   - astra-agents-skills-prompts.md
   - ...
