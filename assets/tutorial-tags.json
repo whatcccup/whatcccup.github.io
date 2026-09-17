@@ -1,0 +1,84 @@
+{
+  "tags": [
+    "Obsidian",
+    "视频学习",
+    "内容采集",
+    "本地转录",
+    "AI Agent",
+    "Skills",
+    "快捷指令",
+    "移动效率",
+    "AGENTS.md",
+    "ChatGPT",
+    "Codex",
+    "提示词"
+  ],
+  "tutorials": [
+    {
+      "path": "tutorials/codex/astra-agents-skills-prompts/",
+      "title": "Codex 规则整理：完整提示词与全量修改版",
+      "tags": [
+        "Codex",
+        "Skills",
+        "AGENTS.md",
+        "提示词"
+      ]
+    },
+    {
+      "path": "tutorials/codex/astra-agents-skills/",
+      "title": "GPT-6 Astra 升级了，你的 Codex 还在用旧规则？",
+      "tags": [
+        "Codex",
+        "Skills",
+        "AGENTS.md",
+        "AI Agent"
+      ]
+    },
+    {
+      "path": "tutorials/codex/codex-with-chatgpt/",
+      "title": "Codex 额度不够用？这个 5000 Star 的 Skill，帮你“白嫖”ChatGPT 额度",
+      "tags": [
+        "Codex",
+        "ChatGPT",
+        "Skills",
+        "AI Agent"
+      ]
+    },
+    {
+      "path": "tutorials/obsidian/claudian-theschema-setup/",
+      "title": "Claudian 完整安装与 Skill 配置",
+      "tags": [
+        "Obsidian",
+        "AI Agent",
+        "Skills"
+      ]
+    },
+    {
+      "path": "tutorials/obsidian/obsidian-shortcuts-voice-journal/",
+      "title": "用 iPhone 快捷指令语音录入 Obsidian：三分支写入灵感、TODO 与日记",
+      "tags": [
+        "Obsidian",
+        "快捷指令",
+        "移动效率"
+      ]
+    },
+    {
+      "path": "tutorials/obsidian/obsidian-web-clipper-bilibili/",
+      "title": "利用 Obsidian Web Clipper 快速学习 B 站视频内容",
+      "tags": [
+        "Obsidian",
+        "视频学习",
+        "内容采集"
+      ]
+    },
+    {
+      "path": "tutorials/obsidian/obsidian-web-clipper-transcript/",
+      "title": "利用 Obsidian Web Clipper 快速学习视频内容（下篇）：无字幕视频自动转录",
+      "tags": [
+        "Obsidian",
+        "视频学习",
+        "本地转录"
+      ]
+    }
+  ]
+}

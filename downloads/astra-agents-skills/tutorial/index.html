@@ -1,0 +1,1553 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI 工具、知识管理与可复用工作流教程">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../../tutorials/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>GPT-6 Astra 升级了，你的 Codex 还在用旧规则？ - 测测的 AI 笔记</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gpt-6-astra-codex" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="测测的 AI 笔记" class="md-header__button md-logo" aria-label="测测的 AI 笔记" data-md-component="logo">
+      
+  <img src="../../../assets/mark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            测测的 AI 笔记
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GPT-6 Astra 升级了，你的 Codex 还在用旧规则？
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../tutorials/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  教程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../projects/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Projects
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="测测的 AI 笔记" class="md-nav__button md-logo" aria-label="测测的 AI 笔记" data-md-component="logo">
+      
+  <img src="../../../assets/mark.svg" alt="logo">
+
+    </a>
+    测测的 AI 笔记
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../tutorials/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教程
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    教程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../tutorials/codex/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Codex
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/codex/codex-with-chatgpt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex 额度不够用？这个 5000 Star 的 Skill，帮你“白嫖”ChatGPT 额度
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/codex/astra-agents-skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPT-6 Astra 升级了，你的 Codex 还在用旧规则？
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/codex/astra-agents-skills-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex 规则整理：完整提示词与全量修改版
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../tutorials/obsidian/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Obsidian
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Obsidian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/obsidian/obsidian-web-clipper-bilibili/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    利用 Obsidian Web Clipper 快速学习 B 站视频内容
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/obsidian/obsidian-web-clipper-transcript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    利用 Obsidian Web Clipper 快速学习视频内容（下篇）：无字幕视频自动转录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/obsidian/claudian-theschema-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claudian 完整安装与 Skill 配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/obsidian/obsidian-shortcuts-voice-journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用 iPhone 快捷指令语音录入 Obsidian：三分支写入灵感、TODO 与日记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="gpt-6-astra-codex">GPT-6 Astra 升级了，你的 Codex 还在用旧规则？</h1>
+<p><strong>GPT-6 Astra 发布后，Codex 用户值得先做一件事：重新检查自己的 AGENTS.md 和 Skills。</strong></p>
+<p>模型更能遵循指令，也会更认真地执行你留下的旧要求。过去为了催它读文档、跑测试、先问清楚而补上的规则，现在可能带来多余的步骤，甚至让任务提前停住。</p>
+<p><strong>以前帮你管住 AI 的规则，现在可能限制了新模型的发挥。</strong></p>
+<p>OpenAI 的官方指南明确建议检查模型可读取的 Skills、AGENTS.md 等指令文件。Eric Provencher 也专门写了《Rethinking skills and prompts for GPT-6 Astra》，拆解哪些要求应该重新审视，以及怎样调整 Skills、AGENTS.md 和任务提示。<a href="https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6-astra">OpenAI 指南</a> · <a href="https://x.com/pvncher/status/2095991462416490862">Eric 原文</a></p>
+<p>下面用一个例子贯穿讲解：<strong>假设你已经装了一份叫 <code>article-writer</code> 的 Skill，负责公众号文章的起草、检查和发布。</strong> 它把“先问清需求、读取素材、写正文、检查封面、准备发布”写成一套固定流程。现在你只让 Codex 改一个标题，它却又开始提问、读整套资料，甚至检查起了封面。</p>
+<p>接下来，我们就整理这份现有 Skill，以及影响它的 AGENTS.md：起草时读写作要求，检查时读相关清单，已经要求发布时再进入发布流程；只改标题，就完成这次标题修改。</p>
+<p>前半篇使用这个假设例子解释方法，后半篇展示我实际运行后的产物和删减数据。完整提示词也会一起给出，方便你处理自己的项目。</p>
+<p><strong>01｜先分清：全局、项目、Skills 与运行记录，各放一层</strong></p>
+<p>AGENTS.md 是给 AI 的工作约定；Skill 是某一类任务的专门说明。在这个例子里，项目 AGENTS.md 可以告诉 Codex 本项目的文章素材放在哪里，<code>article-writer</code> 则说明怎样起草、检查和发布文章。</p>
+<p><strong>全局 AGENTS.md，在 Codex 界面里对应哪里？</strong> 打开桌面端的“设置 → 个性化”，找到 <strong>Codex 说明（自定义指令）</strong>。这个区域编辑的是个人级 AGENTS.md，默认文件位置是 <code>~/.codex/AGENTS.md</code>，用于跨项目的习惯和约定。<a href="https://learn.chatgpt.com/docs/reference/settings#personalization">官方设置说明</a> · <a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md#create-global-guidance">全局 AGENTS.md 说明</a></p>
+<p>项目 AGENTS.md 则放在具体项目文件夹中。例如，一份公众号项目的 AGENTS.md 可以记录这批文章的素材目录和专有用词。这些项目事实无需都填进“个性化”。</p>
+<p>整理之前，先把信息放对位置。</p>
+<table>
+<thead>
+<tr>
+<th>信息</th>
+<th>更适合放在哪里</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多个项目都适用的沟通习惯、协作约定</td>
+<td>全局 AGENTS.md；在界面中通过“设置 → 个性化”里的“Codex 说明”编辑</td>
+<td>默认中文回答；专业词要解释并举例</td>
+</tr>
+<tr>
+<td>当前项目的事实、特殊操作、限制和资料位置</td>
+<td>当前项目或相关子目录的 AGENTS.md</td>
+<td>这个公众号项目的素材目录、专有用词</td>
+</tr>
+<tr>
+<td>某一类任务才需要的方法或工具用法</td>
+<td>对应 Skill 的 <code>SKILL.md</code></td>
+<td><code>article-writer</code> 如何根据任务选择写作、检查或发布流程</td>
+</tr>
+<tr>
+<td>很长的步骤、例子、参考资料</td>
+<td>Skill 的 <code>references</code>，用于存放按需读取的资料</td>
+<td><code>references/drafting.md</code> 存写作要求；<code>references/publishing.md</code> 存发布步骤</td>
+</tr>
+<tr>
+<td>可以反复自动完成的固定操作</td>
+<td>Skill 的 <code>scripts</code>，用于存放可执行脚本</td>
+<td><code>scripts/check_cover.py</code> 自动检查封面图片尺寸</td>
+</tr>
+<tr>
+<td>本次目标、输入、交付要求和完成条件</td>
+<td>你在当前 Codex 对话里发送的任务提示词</td>
+<td>把两份资料合成一篇面向新手的文章，核对并保存</td>
+</tr>
+<tr>
+<td>已确认的决定、原因、进度和待办</td>
+<td>项目工作记录或交接文件</td>
+<td>已采用哪版标题、为什么采用、下一步补什么</td>
+</tr>
+</tbody>
+</table>
+<p>这样，长期规则负责反复需要的约定，具体资料在用到时再读，今天的进度也有单独的位置。</p>
+<p>沿用文章 Skill 的例子，这三句话可以分别这样放：</p>
+<ul>
+<li><strong>“默认用中文回答”</strong>：写进全局 AGENTS.md，也就是“个性化”里的“Codex 说明”，以后换项目也能沿用。</li>
+<li><strong>“本次文章面向新手”</strong>：直接写在这次 Codex 对话的任务消息中，例如“请根据这两份资料写一篇文章，读者是第一次使用 Codex 的人”。</li>
+<li><strong>“发布前检查封面尺寸”</strong>：写进 <code>article-writer</code> 的 <code>references/publishing.md</code>，让 Codex 准备发布时读取。</li>
+</ul>
+<p>这里的“当前任务”，指你在当前 Codex 对话（session）里交代的这次工作。对话是你持续沟通的位置；“这次文章面向谁、交付什么”，是你在其中写下的具体要求。</p>
+<p>“发布说明”在这个例子中就是 <code>references/publishing.md</code>，是一份供 AI 阅读的 Markdown 文件，里面可以写“检查封面尺寸、确认摘要、核对发布账号”等步骤。如果已经有程序能自动检查图片尺寸，这段可执行代码才放在 <code>scripts/check_cover.py</code>，再由发布说明指向它。上面的文件名是结构示例，实际使用时应核对相应文件确实存在。</p>
+<p>这样，只改正文中的一句话时，就不必读取整份发布说明或运行封面检查程序。</p>
+<p>同一条重要规则，尽量只维护一份正文，其他入口指向它。否则，一处已经更新，另一处还留着旧要求，AI 就可能读到两套说法。</p>
+<p>如果项目已经使用多个 AI 助手，它们各自负责什么，可以放在相应的助手配置中。容易变化的模型设置、当前进度，也不必永久写在全局规则里。</p>
+<p>最后，让 Codex 核对实际使用的是哪些文件。电脑上存在一个文件、本次读过一次、以后会自动采用，是三种不同情况，不能混为一谈。</p>
+<p><strong>02｜Skills：先改入口，再改正文</strong></p>
+<p>这里的“入口”指 Skill 的 <code>name</code> 和 <code>description</code>。在我们的例子里，<code>name</code> 就是 <code>article-writer</code>；<code>description</code> 则要写清什么时候需要它，例如起草完整文章，或明确要求执行文章检查、发布流程时。</p>
+<p>AI 先根据这些信息选择 Skill，再阅读 <code>SKILL.md</code> 中的方法和步骤。<code>SKILL.md</code> 是每个 Skill 的核心说明文件，例如它可以写明一篇文章需要哪些输入、交付什么结果。</p>
+<p>先解决选得对不对，再解决选中之后怎么做。</p>
+<p><strong>它到底提供了什么额外帮助？</strong></p>
+<p>先看这份 Skill 是否提供了模型无法自行得知的内容：专门工具的用法、项目特殊要求、稳定的输出格式，或者经过实际使用检验的方法。</p>
+<p>例如，“默认把资料保存到指定目录”有明确作用；“认真思考、努力完成”如果没有补充任何信息，就可以考虑缩短。</p>
+<p>不要因为一份说明以前给旧模型用过，就认定它现在完全无效。要看它是否仍然解决你的实际问题。</p>
+<p><strong>只改标题，为什么也会启动整套写作流程？</strong></p>
+<p>先检查 <code>description</code> 是不是写得太宽。</p>
+<p><code>description</code> 应当把“什么时候使用”说准确。安装的 Skills 很多、<code>description</code> 又很长时，Codex 还可能缩短模型能看到的内容，反而让它难以选准。</p>
+<p>可以这样改：</p>
+<table>
+<thead>
+<tr>
+<th>原来的 <code>description</code></th>
+<th>改写后的 <code>description</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>所有写作任务都使用，开始前先访谈用户</td>
+<td>起草完整公众号文章，或明确要求执行文章专项检查、发布流程时使用；仅改标题或错字时不用</td>
+</tr>
+</tbody>
+</table>
+<p>长背景、完整步骤和能力介绍，放进 <code>SKILL.md</code> 正文或 <code>references</code>。例如，“起草所需信息不足时补充询问”可以写在写作分支中，不必让每种任务都先进入访谈。<code>description</code> 先回答清楚：什么时候需要我？</p>
+<p>改完后，用“从零写一篇文章”和“只改一个标题”分别试一次，看看 AI 是否真的选对。只把 <code>description</code> 写短，还不足以说明问题已经解决。</p>
+<p><strong>几份 Skill 会不会同时要求“先用我”？</strong></p>
+<p>把相关 Skills 的 <code>description</code> 放到一起看。</p>
+<p>一份要求所有任务先规划，另一份要求所有任务先访谈，还有一份要求改完必须再启动另一轮检查。叠加起来，小任务也可能被拉成长流程。</p>
+<p>应让它们各自负责清楚的事情。例如，写完整文章和检查引用是两项不同工作；一项任务可能需要两者，但不用每次都把两套方法全部启动。</p>
+<p><code>SKILL.md</code> 中的要求也要一起核对。不能只把 <code>description</code> 里的“必须”改成“建议”，正文仍然保留一整串互相冲突的步骤。</p>
+<p><strong>这套方法，能不能只在需要时使用？</strong></p>
+<p>对于步骤太多的 Skill，可以选择三种处理方式：</p>
+<ul>
+<li>缩小适用范围。例如，只有从零写文章且信息不足时才提问，改标题时不用。</li>
+<li>保留方法，但只在你点名要求时使用。例如，你说“先采访我，了解写作需求”时，才进入访谈。</li>
+<li>如果它持续打断工作，也没有值得保留的内容，就先不用这套说明。</li>
+</ul>
+<p>方法的使用方式可以改变，不需要把写作、检查、调试等能力一并放弃。</p>
+<p>还要检查有没有附带操作。例如，检查文章前要求配置其他工具，或文章写完后自动发布。这些都要依据当前任务判断，不能因为某份说明把它们连在一起，就默认每次都做。</p>
+<p>暂停使用是否真正实现，也要按工具支持的方式核对。只改 <code>name</code> 或文件名，不能直接宣布它已经不再被使用。</p>
+<p><strong><code>SKILL.md</code> 能不能先指路，详细步骤需要时再读？</strong></p>
+<p>我们的 <code>article-writer</code> 包含写作、检查、发布三种工作，可以在 <code>SKILL.md</code> 中先对应到具体文件：</p>
+<table>
+<thead>
+<tr>
+<th>用户这次要求做什么</th>
+<th><code>SKILL.md</code> 指向哪里</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>从零起草完整文章</td>
+<td><code>references/drafting.md</code>，存放写作要求</td>
+</tr>
+<tr>
+<td>专门检查文章的事实、引用或格式</td>
+<td><code>references/reviewing.md</code>，存放对应检查清单</td>
+</tr>
+<tr>
+<td>已明确要求发布文章</td>
+<td><code>references/publishing.md</code>，存放发布步骤和相关操作要求</td>
+</tr>
+</tbody>
+</table>
+<p>这样，AI 当前只写正文，就不用先把所有发布步骤读一遍。</p>
+<p>长步骤和参考资料放在 <code>references</code>，需要自动执行的操作可以放在 <code>scripts</code>。例如，发布说明可以在需要检查封面时调用 <code>scripts/check_cover.py</code>；检查清单可以在需要核对链接时调用 <code>scripts/check_links.py</code>。这些仍是结构示例，实际引用的文件必须存在。小而单一的 Skill 可以继续放在一个文件里，不必为了整理而拆出一堆空目录。</p>
+<p><strong>为什么 <code>SKILL.md</code> 改了，AI 还是照旧执行？</strong></p>
+<p>因为旧要求可能还在 <code>references</code> 或 <code>scripts</code> 里。</p>
+<p>例如，你从 <code>SKILL.md</code> 删掉了“每次检查整个项目”，但它仍让 AI 读取 <code>references</code> 中的检查清单。清单里留着同样的话，AI 读完后，还是会照做。</p>
+<p>所以，要沿着 <code>SKILL.md</code> 的引用检查 <code>references</code> 和 <code>scripts</code>，看 AI 会继续读什么、执行什么。移动文件后，核对路径正确、文件可用，里面的要求也已经同步调整。</p>
+<p><strong>哪些先后顺序必须保留，哪些可以放开？</strong></p>
+<p>先取得完整资料，再比较异同，这种先后关系必须保留。没有原文，就谈不上准确比较。</p>
+<p>但“无论做什么，都先问十个问题，再写计划，再等一次确认”，就需要检查是否每次都必要。</p>
+<p>可以把固定步骤改成具体条件：缺少会影响结果的信息时才提问；资料齐全、目标清楚时，就选择合适的方法继续完成。</p>
+<p>如果同一套 Skills 还供同事或不同模型使用，要保留他们共同需要的要求。例如，发布时使用哪个账号、图片存放在哪里，不能因为换了模型就删掉。</p>
+<p><strong><code>skill-creator</code> 是什么，它自己更新了吗？</strong></p>
+<p>Codex 确实有 OpenAI 随产品提供的系统内置 <code>skill-creator</code>。它的用途是帮助创建或修改 Skill：把你想完成的工作整理成合适的 <code>name</code>、<code>description</code>、<code>SKILL.md</code>，再按实际需要组织补充资料或脚本。可以在 Codex 中用 <code>$skill-creator</code> 调用它。<a href="https://learn.chatgpt.com/docs/build-skills#create-a-skill">官方 Skill 创建说明</a></p>
+<p>例如，你可以说：</p>
+<blockquote>
+<p>请使用 Codex 系统内置的 skill-creator，整理现有的 article-writer。保留写作、检查和发布的方法，让它按本次任务读取对应资料；只改标题时不进入整套流程。请先核对实际使用的 skill-creator 来自哪里。</p>
+</blockquote>
+<p>之所以要确认来源，是因为同名 Skill 可能来自不同地方。系统内置版本与自行安装的版本，不能只看 <code>name</code> 就当成同一份。</p>
+<p><strong>官方指导有过更新。</strong> Eric 在这篇介绍 GPT-6 Astra 的文章中明确提到，他们近期更新了 <code>skill-creator</code> 的指导，重点包括更短且准确的 <code>description</code>、按需读取资料，以及减少不必要的固定步骤。<a href="https://x.com/pvncher/status/2095991462416490862">Eric 原文的 Skill files 部分</a></p>
+<p><strong>本次全量整理使用了系统版的检查脚本，没有修改 <code>skill-creator</code> 本身。</strong> 下文统计的是实际改写或迁移的私有 Skills。使用工具生成或调整文件之后，仍要检查 <code>description</code> 是否准确、步骤是否适量、<code>references</code> 和 <code>scripts</code> 是否有效。</p>
+<p><strong>03｜AGENTS.md：留下长期有用的要求，改掉过宽的规定</strong></p>
+<p>Skills 解决专项任务怎么做，AGENTS.md 则会持续影响它适用范围内的工作。</p>
+<p>逐条检查时，可以采用四种处理方式：</p>
+<table>
+<thead>
+<tr>
+<th>处理</th>
+<th>适用情况</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>保留</td>
+<td>AI 无法猜出的事实、明确习惯和真实边界</td>
+<td>素材目录、默认中文、不要覆盖已有修改</td>
+</tr>
+<tr>
+<td>删除</td>
+<td>已过时，或没有额外作用的重复提醒</td>
+<td>失效路径、已经不再使用的旧流程</td>
+</tr>
+<tr>
+<td>改写</td>
+<td>本意有用，但范围太宽或容易误解</td>
+<td>把“每次读所有资料”改成按任务查对应文件</td>
+</tr>
+<tr>
+<td>移动</td>
+<td>只在特定项目或任务中需要</td>
+<td>把发布清单移到发布说明，把进度移到工作记录</td>
+</tr>
+</tbody>
+</table>
+<p>对于要移动的内容，先安排好真实可用的新位置。没有反复使用价值的旧案例，也不必全部换个地方继续堆着。</p>
+<p>具体修改时，重点看下面几件事。</p>
+<p><strong>文档从“每次全读”改成“需要时查”。</strong></p>
+<p>核对价格时查价格表，修改程序的数据结构时查对应说明，准备发布时查发布清单。让 AI 根据任务补充阅读其他必要资料，不必用规则强制它每次全读。</p>
+<p>入口本身也要更新。文件是否存在，操作方式是否变化，都要核对。程序项目还可以对照当前安装配置、实际脚本及自动检查设置，确认旧说明里的命令仍然适用。</p>
+<p><strong>检查写清楚“查什么”，也写清楚“什么时候够了”。</strong></p>
+<p>改标题，核对文字和保存结果即可；修复程序问题，就需要检查原来的问题是否解决、相关功能是否受影响。</p>
+<p>项目必做检查仍然保留。检查通过以后，只有新改动、新失败或尚未解决的具体疑点，才扩大或重复检查。同一份内容和同一环境下，已有的有效结果可以复用；相关状态变化后，再重查受影响部分。</p>
+<p><strong>把可以连续完成的工作说清楚。</strong></p>
+<p>如果已经交代“整理资料、写成文章、核对并保存”，就应把这些做到结束，不默认在第一稿后停下来。</p>
+<p>程序项目也可以写明具体情况：本地检查只使用临时数据、不连接正式服务时，在已经授权的修复范围内，可以连续检查、修复本次引起的问题、再检查，无需每一步重新询问。</p>
+<p>涉及其他范围的操作，仍然按实际授权处理。例如，完成本地文章，并不自动包含对外发布。</p>
+<p><strong>你自己的稳定习惯，可以留下。</strong></p>
+<p>“默认用中文回答”“必须使用专业词时先解释并举例”，都可以是长期约定。</p>
+<p>有人希望直接拿结果，有人希望顺便理解关键思路。让规则服务你的使用习惯，不必为了减少几行，把这些也删掉。</p>
+<p><strong>如果需要整理结构，可以按六方面组织。</strong></p>
+<p>沟通习惯、要求的适用关系、执行方式、检查方式、工具与协作、正式资料位置。内容少时合并写即可，不强制凑齐六个标题。</p>
+<p>其中，要求之间如何协调，应遵循工具和平台的实际规则；并行工作，也就是让多个助手同时处理任务，只适合真正独立的工作。例如，可以分别阅读两份材料，但同一篇最终稿应统一改写，避免互相覆盖。</p>
+<p>如果某条规则导致任务停住，让 AI 说明具体是哪份文件、哪句话，以及它为什么认为必须停。这样才知道要修正的是规则，还是它对规则的理解。</p>
+<p>本次任务的完成标准则放在当前提示词里。例如：</p>
+<blockquote>
+<p>把这两份资料整理成一篇面向新手的文章，核对事实与链接，保存到指定目录。交付文章及仍未核实的问题，完成后结束，不自行发布。</p>
+</blockquote>
+<p><strong>04｜这八类 Skills，值得重点检查</strong></p>
+<p>不需要因为模型升级就把所有 Skills 重做。先看以下类别里，是否存在对应问题。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>重点检查什么</th>
+<th>调整方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>网页与电脑操作</td>
+<td>是否大量重复模型已经能完成的基础操作；是否遗漏账号与环境要求</td>
+<td>减少无用步骤，保留账号、专用浏览器环境、工具参数和下载位置</td>
+</tr>
+<tr>
+<td>程序检查</td>
+<td>是否只有通用提醒，缺少项目实际会犯的错误</td>
+<td>保留特殊约定和真实错误案例，用已知有问题的例子检查效果</td>
+</tr>
+<tr>
+<td>长文档处理</td>
+<td>分段是为了容量，还是为了读齐资料和定位出处</td>
+<td>容量条件变化后重新判断；图片文字、附件、视频文字稿仍要取得完整</td>
+</tr>
+<tr>
+<td>数据分析</td>
+<td>是否限制了有价值的复杂任务，或缺少计算口径</td>
+<td>按实际需要扩展，保留单位、口径与核对方法，用已知答案检查</td>
+</tr>
+<tr>
+<td>多步骤任务</td>
+<td>是否把普通操作顺序写得过死</td>
+<td>保留必须先完成的业务条件，让 AI 选择适合本次任务的做法</td>
+</tr>
+<tr>
+<td>操作安全</td>
+<td>是否没说清能读、能记、能改什么，或给所有小事加长流程</td>
+<td>针对真实缺口补规则，区分临时数据、真实业务和对外操作</td>
+</tr>
+<tr>
+<td>常用提示词</td>
+<td>是否堆了很多催促，却没说交付什么</td>
+<td>保留目标、资料、工具范围、交付物和完成标准，删除重复表达</td>
+</tr>
+<tr>
+<td>跨对话记忆</td>
+<td>是否每次都要重讲，或把所有聊天都塞进长期说明</td>
+<td>用简短交接记录保留已确认决定、依据和待办；个人偏好按意愿保存</td>
+</tr>
+</tbody>
+</table>
+<p>比如，AI 一次能处理更长的文字，也不意味着扫描图片里的字已经识别出来。会操作网页，也不意味着知道应该登录哪个账号。</p>
+<p>再比如，多步骤方法是否需要固定顺序，可以用同一项任务比较。保留能够提高质量的条件，不凭模型升级就认定“步骤越多越好”或“全部删掉更好”。</p>
+<p>这些类别提供的是检查方向。当前项目没有的类别，可以跳过。</p>
+<p><strong>05｜改完，用三个任务看实际变化</strong></p>
+<p>第一，给一个应该使用某个 Skill 的任务，再给一个相近但不需要它的任务。例如，从零写文章和只改标题，看看是否区别处理。</p>
+<p>第二，做一个小改动。看看是否减少了无关阅读、没有必要的提问和重复检查。</p>
+<p>第三，给一个有明确交付要求的完整任务。看看它是否真的完成文件生成与核对，同时保留中文回答、资料位置和已有改动保护等重要约定。</p>
+<p>先保持同一模型和同一套设置，便于比较。文件短了多少可以记录，任务是否完成得更好才是判断依据。</p>
+<p>新版文件还需要按工具支持的方式启用。单独生成一份 AGENTS.candidate.md，也就是一份供试用的候选文件，不会仅因为这个名字就自动生效。如果无法验证实际启用后的表现，应明确写“文件已生成，行为尚未验证”。</p>
+<p><strong>06｜复制这份完整提示词，让 Codex 开始整理</strong></p>
+<p>在 Codex 中打开要整理的项目，复制下面整段。项目范围和交付位置可以填写；留空时，按提示词中的默认方式处理。</p>
+<p>它会依次盘点和分类，整理 Skills，再整理 AGENTS.md，补查八类用途，完成必要检查并交付可用文件。已有明确修改授权的，按授权实施；其他部分生成独立新版。</p>
+<p>这是本次整理任务的完整说明，长度是为了覆盖检查项。整理后的长期规则只保留反复需要的内容，不要把这整段再放回 AGENTS.md。</p>
+<p>——复制开始——</p>
+<blockquote>
+<p>请帮我整理当前项目适用的 AGENTS.md 和 Skills，使 AI 更容易选对方法、读到相关资料，并把已经交代的工作完成。</p>
+<p>AGENTS.md 是给 AI 的工作约定，例如素材位置和回答语言；Skill 是某一类任务的专门说明，例如写文章或检查表格的方法。Skill 的 <code>name</code> 是标识，例如 <code>article-writer</code>；<code>description</code> 写清何时使用，例如“从零起草完整文章时使用”。</p>
+<p>我不追求固定行数、删减比例或停用数量。需要保留真正有用的信息，改掉重复、过时、冲突和让简单任务变复杂的要求。</p>
+<p>【项目范围】未填写时，使用当前打开的项目。先核对实际目录，不搜索整个电脑来猜测我要处理的项目。
+【交付位置】未填写时，在当前项目下新建一个不覆盖已有内容的“规则整理结果”目录。
+【处理方式】默认在交付目录生成完整、可使用的新版。如果我已经明确授权修改某些正式文件，则按已有授权处理那些文件，保留可恢复的原版，并保护原有未完成改动。其他文件仍输出独立新版或明确建议。
+【常用任务】优先从当前项目和我已经提供的信息中识别，不清楚的部分注明；不要要求我先填写一份冗长问卷。</p>
+<p>以下是完整任务要求，可以直接开始，不需要另找文章来补足步骤。</p>
+<p>一、先找到真正相关的规则</p>
+<ol>
+<li>检查当前工具提供的实际采用规则的信息，列出适用的全局说明、项目及子目录的 AGENTS.md、已安装 Skills 的 <code>name</code> 和 <code>description</code>，以及相关的 <code>SKILL.md</code>、<code>references</code>、<code>scripts</code> 和其他被引用文件。<code>SKILL.md</code> 存放核心要求；<code>references</code> 存放按需读取的资料，例如发布清单；<code>scripts</code> 存放可执行脚本，例如链接检查程序。全局说明是多个项目共用的要求，例如默认回答语言；项目说明只管当前项目，例如这篇文章的素材目录。</li>
+<li>区分“文件存在”“本次主动读过”“工具确实把它作为指令使用”三种情况。有证据才写已生效；工具不提供证据就写无法确认，不要靠文件名猜。</li>
+<li>检查是否有多个重复入口，以及类似快捷方式、实际指向另一处文件的链接。找到真正维护正文的位置，避免改错副本。遵守本机现有存放约定，不修改系统内置文件，不把同一份私有 Skill 复制到多个安装目录。</li>
+<li>先看 Skills 的 <code>name</code> 和 <code>description</code>，再深入检查与本次任务有关、<code>description</code> 重叠或存在问题的内容。不需要把所有无关资料一次读完。若范围较大，可分批处理，并列明已检查、尚未检查和无法读取的部分。</li>
+<li>如果现有环境有多个 AI 助手、独立的助手配置或交接说明，一并确认它们和规则文件的关系。没有这些配置就跳过，不为了整理规则新搭一套系统。</li>
+</ol>
+<p>二、逐条判断，留下处理依据</p>
+<p>对范围内的规则分别标记“保留、删除、改写、移动、暂不确定”，注明原文件、位置、原句、影响、建议和新去向。没有问题的内容可以合并说明，值得修改的问题按实际影响排序。</p>
+<p>判断时区分这些情况：多个项目都需要的稳定约定；重复内容；已经过时的要求；仅当前项目需要的信息；只适合某个模型的指导；本应放到助手配置里的职责；已经有另一份正式文档维护的流程；暂时无法判断的内容。</p>
+<p>保留 AI 无法猜出的事实，例如真正的素材位置、需要使用的账号、特殊命令、业务口径、我的语言与解释偏好、不能覆盖的已有改动和实际授权范围。当前聊天里出现了同一句话，不足以证明以后新对话可以删掉那条长期规则。保留账号和凭据的使用要求，但不要把密码、登录凭据等秘密原文写进规则文件。</p>
+<p>没有反复使用价值的旧案例可以删除，不必为每段删除内容另建一个文件。需要移动的内容，先安排真实可用的新位置并检查引用，再从原处移走。重要规则尽量只维护一份正文，其他入口指向它。</p>
+<p>三、整理 Skills：先改入口，再改正文</p>
+<ol>
+<li>说明每个相关 Skill 提供什么额外价值：专门工具的用法、项目特殊知识、必须遵守的业务要求、经过验证的方法或稳定输出格式。没有额外信息的通用提醒可以减少。不能仅因它为旧模型编写，就判定整套方法无效。</li>
+<li>检查 <code>name</code> 和 <code>description</code>。<code>description</code> 要短且准确，例如“从零起草完整公众号文章时使用”，不堆长步骤和能力宣传。大量过长的 <code>description</code> 可能影响模型看到的信息；只在有证据时说明具体截断情况，不虚构容量数字。</li>
+<li>改掉适用范围过宽的 <code>description</code>。例如，将“所有写作任务都先访谈”改为“从零写完整文章且关键信息不足时先访谈”；必要时补一句“只改标题或错字时不用”。不要为每个 Skill 堆一长串无关排除条件。</li>
+<li>把相关 Skills 放在一起检查：是否都要求先使用自己，是否重复问问题，是否一份要求继续、另一份要求停下。将 <code>name</code>、<code>description</code> 和 <code>SKILL.md</code> 中的要求一起核对和调整，不能只换一句措辞却保留后面的冲突步骤。</li>
+<li>将处理方式具体分为：保留原用法；只在更合适的任务中自动使用；只在我点名要求时使用；暂停使用；合并或删除无价值的重复内容。解释每项选择，并使用当前工具真实支持的方式实现。仅修改 <code>name</code> 或文件名、把文件留在原目录或写一句“不再使用”，不能直接宣称已经停用成功。同组多份说明若通过相同流程自动参与任务、共同造成冲突，可以按一组调整其使用方式；不必先证明每份文件都没有价值。</li>
+<li>检查是否多做了我没有要求的事，例如：简单修改前固定访谈；普通检查前配置额外工具；强制替换项目惯用词；做完后自动记录版本、提交全部已有改动或发布。Git 是记录代码版本的工具，记录一个版本也不等于发布到网站。按实际任务和授权处理这些步骤，不把它们自动连在所有工作后面。</li>
+<li>有价值的专门方法可以保留为点名使用。例如，TDD 是先写检查程序、再写功能的方法；若它不适合每次小改动，可在用户明确要求时使用。独立审查和调试也按任务需要决定，不因为停用一套自动流程就丢掉所有有效方法。</li>
+<li>一个 Skill 包含多种任务时，在 <code>SKILL.md</code> 中先说明“做什么任务去读哪份资料”，详细步骤再按需读取。例如，写正文时读 <code>references/drafting.md</code>，准备发布时才读 <code>references/publishing.md</code>；这些只是路径示例，实际引用必须存在。单一小 Skill 不必强行拆成多个文件。</li>
+<li>同步检查 <code>references</code> 和 <code>scripts</code>。<code>SKILL.md</code> 删掉的要求若仍在这些文件中，问题可能继续存在。核对所需文件是否可读、路径是否正确、步骤是否仍适用；发现缺失或过时内容如实列出。</li>
+<li>保留真实的业务先后关系，放宽无必要的固定操作顺序。例如，先取得完整原文才能比较资料，是必要条件；必须提十个问题、固定调用五个工具，不应在所有任务中强制执行。</li>
+<li>如果这套 Skills 确实由不同人、不同模型共用，保留共同需要的业务事实，必要时区分模型相关指导。不要把只在一个模型上成立的删减结论直接套给所有使用者。</li>
+<li>若使用 <code>skill-creator</code> 等工具，先核对实际来源和当前指导；在 Codex 中优先使用当前可用的系统内置版本，不将同名私有版本直接视为同一份，也不修改系统内置 Skill 本身。<code>skill-creator</code> 用于创建或调整 Skill，例如帮助生成 <code>SKILL.md</code>。检查生成结果是否仍有 <code>description</code> 太宽、步骤过多、文件引用失效等问题。不要因为是工具生成的就默认正确，也不因缺少辅助生成工具而停止能够完成的改写。</li>
+</ol>
+<p>四、重写 AGENTS.md：把长期要求写清楚</p>
+<ol>
+<li>按实际需要组织沟通习惯、要求之间的适用关系、执行方式、检查方式、工具与协作、正式资料位置。小文件可以合并表达，不强制六个标题。稳定通用习惯放全局；项目事实放项目；专项长流程放对应 Skill 或资料；历史决定、进度与交接信息放工作记录。</li>
+<li>删改没有具体作用的口号和过时补丁。例如，“认真思考、遵守最佳实践”若没有额外信息，可以缩短；特殊业务约束不能一并删掉。不把容易变化的模型名称、运行状态写成永久事实。</li>
+<li>把“每次都先读所有文档”改成按任务读取。例如，改产品价格时查价格表，准备发布时查发布清单，改一个错字不强制先读全项目。核对被指向的文件是否存在、内容是否仍适用。</li>
+<li>程序项目还要核对安装、检查和运行命令。依据当前配置、实际可用脚本、记录依赖版本的文件及自动检查配置交叉确认。例如，旧说明中的安装命令，应与项目现在采用的安装工具一致。不要仅因旧文件写了某条命令就照做。</li>
+<li>保留项目必做检查，检查范围与本次变化相称。改标题可以核对文字和保存结果；修复程序行为需要检查问题是否解决及相关功能是否受影响。不要只为重复证明显而易见的实现而新增测试。</li>
+<li>必要检查通过后，只有新改动、新失败或未解决的具体疑点，才扩大或重复检查。同一代码、输入和环境状态下的有效结果可以复用；相关状态变化后重查受影响部分。调试先确认现象，必要时用能重现问题的最小例子查原因，不凭猜测扩大修改。</li>
+<li>在环境前提真实成立时，写清可以连续做的工作。例如，本地检查只使用临时测试数据、不连接正式服务时，可以在既有修复授权内运行检查、修复本次引起的问题、再查受影响部分，无需每一步重新询问。</li>
+<li>保留系统和平台约束，按当前工具的实际机制处理用户要求、项目说明和 Skill 的关系。Skill 中的默认流程不能自行增加本次授权，也不应把已经授权的工作无故停住。涉及权限变化的改写单列说明。</li>
+<li>沟通面向我的理解程度：先用日常语言解释；标准字段名、文件名和工具名保留原文，例如 <code>name</code>、<code>description</code>、<code>SKILL.md</code>、<code>references</code>、<code>scripts</code>，不要用中文称呼替换；首次出现时解释用途并给例子。已熟悉的基础知识不反复讲。明确偏好可以保留短句，不为追求更短而删除。</li>
+</ol>
+<p>五、再按八类用途查缺补漏</p>
+<p>只检查当前实际存在、与任务相关的类别；缺少某类不代表必须安装。以下是检查方向，不是预先决定全部删除或新增。</p>
+<ol>
+<li>网页与电脑操作：能否减少重复的点击说明，同时保留账号、独立浏览器环境、工具参数和下载位置？例如，AI 会打开网页，也不代表知道应该登录哪个账号。</li>
+<li>代码检查：减少通用口号，保留项目特殊要求和真实错误案例。需要判断效果时，用包含已知问题的小样例检查能否发现它。</li>
+<li>长文档：区分“因为一次装不下而分段”和“为了读齐、定位出处而分段”。一次能读更多文字，不代表图片、附件和被工具截掉的内容已经取得。扫描图片需要识别其中的文字；视频需要逐句记录的文字稿。资料未取得不能声称读完。</li>
+<li>数据分析：保留计算口径、单位和输出格式；确有需要时扩展更复杂的计算。用已知答案或独立计算检查结果，不凭未经核验的模型分数增加承诺。</li>
+<li>多步骤工作：保留必须先完成的业务条件及质量要求，普通实现顺序按任务选择。对有争议的固定流程，可用同一任务比较，不预设步骤越多越好或越少越好。</li>
+<li>操作安全：检查读取、记忆和实际行动的范围是否清楚，针对真实缺口补规则。区分本地临时数据与真实业务数据，不为所有低影响任务增加同一套冗长审查。</li>
+<li>提示词模板：删重复催促，保留目标、已有资料、可用工具、交付物、完成条件和停止范围。不要要求必须减半。</li>
+<li>跨对话衔接：优先利用已有工作记录保存已确认的决定、依据、待办和何时需要重新核对。例如，记录选择了哪份稿件、原因和下一步，而不是抄全部聊天。个人偏好若要存入跨任务使用的长期记忆，应按用户实际授权办理；没有必要就不新增记忆系统。</li>
+</ol>
+<p>六、让任务做到约定结果，合理使用工具</p>
+<ol>
+<li>为常用任务给出简短模板，包含：目标、已有资料、可用工具和操作范围、实际交付物、怎样检查、完成后在哪里停。例如，“把两份资料整理成一篇面向新手的文章，核对事实并保存到指定位置，交付后结束，不自行发布”。</li>
+<li>已授权工作持续到目标完成、必要检查结束或遇到真实阻塞。不要默认在第一次写完后停住，也不要在目标完成后凭空增加后续任务。用户中途补充、纠正或询问进度时，回应后继续原任务，除非用户明确取消或替换目标。</li>
+<li>只对会实质改变结果、范围或授权的缺失信息提问，能独立做的部分继续。如果规则导致停顿，给出具体文件位置和原句，解释它是明确要求还是你的理解，不笼统说“按规定必须确认”。</li>
+<li>工具选择以当前可用能力为准，优先适合目标的专用工具；互不等待对方结果的读取和查询可以批量执行，不把共享状态操作强行同时进行。</li>
+<li>如果现有工具支持且用户授权允许使用多个 AI 助手，只把真正独立的工作交出去。例如，两份互不依赖的材料可以分别阅读；同一份稿件的最终改写由一个助手统一处理。交代输入、输出、读写范围和完成标准，汇总后核对，不让多个助手同时改同一文件。没有这项能力就由当前助手完成。</li>
+<li>本次整理保持当前有效的模型和思考档位，方便判断规则修改的效果。思考档位是工具允许模型投入多少推理的设置，例如日常小任务和复杂分析可能适合不同档位。只有用户要求另行比较或迁移模型时，再核对工具当前支持的选择，不把统一调低当成整理规则的必做项。</li>
+</ol>
+<p>七、用少量真实任务检查，而不只比较字数</p>
+<p>先检查新文件格式、所需引用、冲突及内容是否完整。再选择与实际改动有关的代表任务，不为没有变化或不适用的项目强行增加检查。</p>
+<p>至少为以下三类行为给出适用检查，并在具备真实启用条件和授权时执行：</p>
+<ul>
+<li>应该用某个 Skill 的任务能选中它；相近但不需要的任务不会误用。例如，从零写文章和只改一个标题应区别处理。</li>
+<li>一个小改动不会读大量无关资料、额外找多个助手或反复扩大检查。</li>
+<li>一个明确交付任务能继续到文件生成、结果核对完成；关键个人偏好和项目规则仍被遵守。</li>
+</ul>
+<p>有条件时再检查：已授权任务是否重复询问；适合并行的只读任务能否正常分工；是否避免同时改同一文件；是否仍读取正确的项目和工作说明；未授权的发布、删除、真实业务修改是否保留边界。边界检查采用不会产生真实破坏或外部发布的方式。</p>
+<p>运行对比前，先确认工具真正支持怎样临时使用新版，保留原版与恢复方式。名为 AGENTS.candidate.md 的候选文件不会仅因这个名字就自动成为正式规则；模型按要求读一次，也不能直接证明以后会自动生效。如果临时替换配置测试，结束后恢复并核对；如果已经授权正式采用，保留恢复副本并核验实际启用状态。</p>
+<p>比较时尽量使用相同任务、资料、模型和思考档位。优先看交付质量、误用方法、无关读取和不必要停顿，再记录行数或字数变化。工具不提供用量或内部助手的真实运行信息时，写“无法取得该证据”，必要时标记 NOT_EXPOSED；不要猜。没有多助手功能就跳过相关项，不临时搭建复杂配置。</p>
+<p>如果不能验证真实启用后的行为，交付完整新版和准确的手动试用步骤，并明确“文件已生成，行为尚未验证”，不要用模拟结果冒充实际效果。</p>
+<p>八、交付可使用的文件及简短说明</p>
+<p>请连续完成：盘点、改写、生成文件、必要检查和交付，不在每个小阶段重复等待确认。</p>
+<p>最终给我：</p>
+<ol>
+<li>完整的新版 AGENTS.md，以及确实需要调整的 <code>SKILL.md</code>、<code>references</code> 或 <code>scripts</code>。保持它们之间的引用可用；文件名冲突时另建位置，不覆盖无关内容。不只提供摘要或建议清单。</li>
+<li>一份变化表：原文件与位置、旧规则、处理方式、新表达或去向、理由、预期影响。会改变操作权限的项目单列，无法判断的项目说明缺什么证据。</li>
+<li>一份检查记录：实际做了什么、结果如何、哪些没有执行或无法验证。根据结果说明可以试用、还要修改、宜保留原版或当前无法验证；没有足够证据不宣称提效或没有退化。</li>
+<li>一份新手使用说明：文件在哪里、如何按当前工具的真实方式启用、怎样确认启用、如何恢复。独立新版生成完不等于已经安装或生效。</li>
+<li>一个适合当前项目的任务提示示例，写清目标、输入、范围、交付和完成标准。</li>
+</ol>
+<p>遇到打不开的文件、失效位置、缺少工具、读取被截断或规则冲突，说明卡在哪里、影响了哪部分、尝试过什么，以及继续所需的最少信息；其他可以完成的部分继续。</p>
+<p>这是一项有范围的整理任务，不因发现其他可改善事项就无限扩展。完成后，以后只针对真实出现的问题补充必要规则，并安排能判断该问题是否解决的检查，避免把文件重新堆满通用提醒。</p>
+</blockquote>
+<p>——复制结束——</p>
+<p><strong>07｜我用这套方法，整理了自己的全部 19 个项目</strong></p>
+<p>我按照这套方法，对自己全部 19 个项目中的 AGENTS.md 和 Skills 进行了整理和修改。</p>
+<p>这次处理覆盖项目规则、Skills 的入口与正文、参考资料、辅助脚本，以及文件之间的引用关系。需要调整的文件已经更新到正式位置，有效的内容继续保留。</p>
+<table>
+<thead>
+<tr>
+<th>处理范围</th>
+<th>实际结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>项目检查</td>
+<td>19 个项目都有处理结论，需要改的修改，仍然有效的保留</td>
+</tr>
+<tr>
+<td>AGENTS.md</td>
+<td>修改 13 份项目或子目录规则</td>
+</tr>
+<tr>
+<td>Skills 主说明</td>
+<td>改写 11 份已有 <code>SKILL.md</code>，另整理并迁入 1 份 Skill</td>
+</tr>
+<tr>
+<td>补充资料</td>
+<td>新增 6 份参考文件，用来承接详细方法、阶段记录及缺失资料</td>
+</tr>
+<tr>
+<td>正式文件应用</td>
+<td>共 49 个文件：24 个原位置改写、6 个参考新增、19 个随 Skill 包迁移</td>
+</tr>
+<tr>
+<td>文件夹链接</td>
+<td>修复或建立 3 处链接，让项目入口指向实际维护的 Skill 目录</td>
+</tr>
+</tbody>
+</table>
+<p>其中一份 Skill 连同参考资料、模板和脚本，共 19 个文件，移到了统一维护的目录。原来的入口指向新位置，避免同一份方法在多个地方各改一版。</p>
+<p>打开结果文件夹，可以按下面的顺序查看。这里列的是实际产物名称，你收到的文件名可能不同。</p>
+<table>
+<thead>
+<tr>
+<th>产物示例</th>
+<th>里面有什么</th>
+<th>什么时候看</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>README.md</code></td>
+<td>本次范围、完成状态和其他文件入口</td>
+<td>第一个打开</td>
+</tr>
+<tr>
+<td><code>项目结果.md</code></td>
+<td>19 个项目分别改了什么、保留了什么</td>
+<td>核对是否覆盖要求的范围</td>
+</tr>
+<tr>
+<td><code>变化表.md</code></td>
+<td>主要修改、理由、内容去向及操作范围的变化</td>
+<td>判断改动是否符合使用习惯</td>
+</tr>
+<tr>
+<td><code>检查与恢复.md</code></td>
+<td>实际检查、未通过的项目、尚未验证的行为和恢复步骤</td>
+<td>判断结果能证明什么，以及如何恢复</td>
+</tr>
+<tr>
+<td><code>application-manifest.json</code></td>
+<td>实际应用的文件、正式位置、对应备份和内容核对记录</td>
+<td>追查某份文件是否已替换、应恢复哪一版</td>
+</tr>
+<tr>
+<td><code>applied-backups/</code></td>
+<td>修改前的文件及迁移前的完整 Skill 包</td>
+<td>需要比较原文或恢复时查看</td>
+</tr>
+<tr>
+<td><code>逐条去向.md</code>、<code>逐条去向.json</code></td>
+<td>原句、原位置、改写结果和理由</td>
+<td>对具体删改有疑问时查看</td>
+</tr>
+<tr>
+<td><code>行数与字节.json</code></td>
+<td>原始行数与文件大小记录</td>
+<td>查原始统计；本文的字符数另按备份和实际改写文件重新计算</td>
+</tr>
+</tbody>
+</table>
+<p>第一次查看，先读 <code>README.md</code> 和 <code>项目结果.md</code>，再读 <code>变化表.md</code> 与 <code>检查与恢复.md</code>。需要查某个文件的实际位置和备份时，打开 <code>application-manifest.json</code>；需要追查某句话时，再读 <code>逐条去向.md</code>。</p>
+<p><strong>08｜看结果时，重点核对这四件事</strong></p>
+<p><strong>第一，整理的范围是不是你要求的范围。</strong></p>
+<p>“检查了多少项目”“修改了多少文件”和“安装了多少个文件”，是不同的数量。这次检查了 19 个项目，没有要求每个项目都必须删掉一些内容。</p>
+<p>已经有效的规则可以保留，没有本地规则的项目也不必硬加通用说明。多个项目共用的 Skill 按实际维护位置处理一次，历史备份和示例文件与正式使用的规则分开记录。</p>
+<p>如果你要求检查全部项目，就让 Codex 先列出项目清单，再逐项写明处理结果。发现了某份文件，不等于已经读完并检查了其中的内容。</p>
+<p><strong>第二，它删掉的是什么，留下的是什么。</strong></p>
+<p>这次有一份 Skill，原来的 <code>SKILL.md</code> 有 498 行，新版是 27 行。重复内容合并后，详细方法放进了三份 <code>references</code> 文件，主说明留下适用条件、关键约定和资料入口。</p>
+<p>这样，AI 先判断本次需要哪种方法，再读取对应资料。新版也写清了检查的适用条件：只修改一段文字时，不要求启动与本次改动无关的整套检查。</p>
+<p>其他修改主要集中在四个范围：</p>
+<ul>
+<li><strong>资料读取</strong>：根据本次任务查相关内容，减少无条件全文预读。</li>
+<li><strong>检查要求</strong>：检查范围与实际改动对应，避免一个小修改默认检查整个项目。</li>
+<li><strong>任务衔接</strong>：复用已经明确的要求和仍然有效的决定，减少重复提问与停顿。</li>
+<li><strong>内容位置</strong>：把阶段进度和历史记录移出长期规则，补齐缺失资料并修复失效引用。</li>
+</ul>
+<p>你可以重点查看常用 Skills 的 <code>description</code>，再看它指向的正文和资料。素材位置、账号环境、特殊命令和真实业务要求，应当能在对应文件中找到。对某项删除不放心，就让 Codex 找出原句和处理后的去向。</p>
+<p><strong>第三，检查通过，究竟通过了哪种检查。</strong></p>
+<p>这轮记录了以下结果：</p>
+<ul>
+<li>49 个正式文件与最终改写版的内容校验值一致；这意味着放到正式位置的文件与准备采用的版本相同。</li>
+<li>12 份 Skill 主说明中，10 份通过通用格式检查，另两份出现已有字段的兼容问题。</li>
+<li>检查脚本识别出的 10 处 Markdown 相对链接有效；分组记录还核对了其他被引用资料的位置。</li>
+<li>7 个辅助脚本通过语法检查。这只能说明代码在语法上可以解析，没有实际运行它们处理业务数据。</li>
+</ul>
+<p>两份未通过通用格式检查的文件，都包含原有的 <code>effort</code> 字段，而这个字段不在检查脚本的允许列表中。它是用来声明思考投入的配置项，例如 <code>medium</code>。这次保留了原值，并另外确认文件开头的配置与原版一致、能够正常解析，没有为了让检查通过而删除原设置。这个结果也不能证明当前工具一定会采用该字段。</p>
+<p>所以，报告不能只写一句“全部通过”。文件格式、引用路径、程序语法和真实任务表现，要分别说明。这轮没有完成原版与新版在相同条件下的业务任务对比，不能仅凭文件检查宣称整体提效。</p>
+<p><strong>第四，新版现在处于哪一步。</strong></p>
+<table>
+<thead>
+<tr>
+<th>结果里写的状态</th>
+<th>对你意味着什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>候选文件已生成</td>
+<td>新版已经写好，可以检查内容</td>
+</tr>
+<tr>
+<td>正式文件已替换</td>
+<td>新版已经放到正式位置，恢复备份应当可找到</td>
+</tr>
+<tr>
+<td>Skill 入口已被发现</td>
+<td>工具提供的可用 Skill 目录中已经出现该入口</td>
+</tr>
+<tr>
+<td>已用实际任务验证</td>
+<td>已经观察过指定场景的表现，结论以这些任务为准</td>
+</tr>
+</tbody>
+</table>
+<p><strong>我这轮已经完成正式文件应用，后续任务提供的 Skill 目录也出现了新入口。</strong> 各项目的新任务是否读取正确规则、是否选对 Skill、是否少读无关资料，仍需要实际使用记录。</p>
+<p>已经正式采用的文件无需再安装一遍。接下来直接从相应项目开始一项真实工作，观察具体表现即可。</p>
+<p><strong>09｜看完产物后，可以怎样回复 Codex？</strong></p>
+<p>根据实际交付状态，选择合适的回复。把项目范围和 Skill 名称换成自己的即可。</p>
+<p><strong>范围没有做完整时，要求补齐遗漏。</strong></p>
+<blockquote>
+<p>我要求整理的是 Codex 中保存的全部项目。请用实际项目列表逐项核对，列出已检查、已修改、保留、不适用、无法访问和未完成的部分。复用本轮已有结果及仍然有效的检查，只处理遗漏或发生变化的部分。继续按已经约定的方式交付；若原来已授权正式修改，就完成必要备份、修改和检查，不停在候选文件阶段。</p>
+</blockquote>
+<p><strong>看不懂为什么删了某条要求时，要求解释具体改动。</strong></p>
+<blockquote>
+<p>请拿我常用的一个 Skill 举例，列出最重要的几处改动：原来怎么写、现在怎么写、原要求会造成什么行为、为什么这样调整。重点说明语言偏好、素材位置、账号环境和业务要求是否保留；移动的内容请给出新位置。按已有记录回答，不需要重新审计全部文件。</p>
+</blockquote>
+<p><strong>如果收到的仍是候选文件，选定采用范围。</strong></p>
+<blockquote>
+<p>本次采用范围是这份项目 AGENTS.md，以及我选定的 Skill 的新版 SKILL.md 和同步修改的 references。请按交付清单核对正式位置，检查原文件在整理后是否又有变化，保护新增改动并保存可恢复的原版。然后应用选定文件，完成必要检查，告诉我如何在新任务中确认启用。</p>
+</blockquote>
+<p>这段话已经交代了采用对象和后续操作，不需要每完成一个小步骤再回复一次“继续”。若出现会改变范围的冲突，Codex 应说明具体文件和影响。</p>
+<p><strong>如果已经正式应用，直接给一个实际任务。</strong></p>
+<p>例如，新开对应项目的任务后，可以这样写：</p>
+<blockquote>
+<p>请把指定文章的标题改成我给的新标题，保存并回读，确认正文没有变化。完成后简短说明实际使用了哪些规则或 Skill，以及本次改动的检查结果。</p>
+</blockquote>
+<p>观察它有没有直接完成标题修改，是否仍然进入访谈、封面检查或其他无关流程。完整写作任务和发布任务，也可以分别按自己的真实需求试用。</p>
+<p><strong>启用后仍然出现老问题时，提供具体场景。</strong></p>
+<blockquote>
+<p>我刚才只要求修改一个标题，但你仍然读取了完整写作资料，并进入访谈。请根据刚才这次执行记录，找出导致这些额外步骤的 description、正文或引用位置，只修正与该问题直接相关的要求。保留仍有用的方法，用同一个标题修改任务复查一次，并报告结果。</p>
+</blockquote>
+<p>这样的反馈能对应到真实行为，也方便判断修改是否有效。比起笼统地说“还是太啰嗦”，描述刚才让它做什么、它额外做了什么，更容易找到要改的地方。</p>
+<p><strong>10｜这次到底精简了多少？</strong></p>
+<p>先把数量说清楚：<strong>这轮应用了 49 个文件，其中 40 个内容新增或改写，9 个只是随 Skill 原样迁移。</strong> 下面的整体精简比例只统计这 40 个内容有变化的文件。</p>
+<p>比较时，6 个真正新增的参考文件在原版按零计算；迁移的文件使用原目录的备份作比较，不能因为换了存放位置，就把原有内容算成新增。统计包含本次改动的参考资料和脚本，不计报告及未改动资料。</p>
+<table>
+<thead>
+<tr>
+<th>统计项</th>
+<th style="text-align: right;">整理前</th>
+<th style="text-align: right;">正式新版</th>
+<th style="text-align: right;">变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总行数</td>
+<td style="text-align: right;">4,298 行</td>
+<td style="text-align: right;">3,832 行</td>
+<td style="text-align: right;">减少 466 行，约 10.8%</td>
+</tr>
+<tr>
+<td>总字符数</td>
+<td style="text-align: right;">149,067</td>
+<td style="text-align: right;">139,236</td>
+<td style="text-align: right;">减少 9,831 个字符，约 6.6%</td>
+</tr>
+</tbody>
+</table>
+<p>字符数包含文字、标点、空格和换行，按本次修改前的备份与最终文件计算。</p>
+<p>再把主说明单独拿出来看：</p>
+<table>
+<thead>
+<tr>
+<th>主说明范围</th>
+<th style="text-align: right;">行数变化</th>
+<th style="text-align: right;">字符数变化</th>
+<th style="text-align: right;">字符减少比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13 份 AGENTS.md</td>
+<td style="text-align: right;">1,552 → 1,039</td>
+<td style="text-align: right;">48,676 → 35,678</td>
+<td style="text-align: right;">26.7%</td>
+</tr>
+<tr>
+<td>12 份 SKILL.md</td>
+<td style="text-align: right;">1,605 → 1,139</td>
+<td style="text-align: right;">64,855 → 46,081</td>
+<td style="text-align: right;">28.9%</td>
+</tr>
+</tbody>
+</table>
+<p>其中 12 份 Skill 主说明的具体变化如下，表中用编号区分。</p>
+<table>
+<thead>
+<tr>
+<th>Skill 编号</th>
+<th style="text-align: right;">行数变化</th>
+<th style="text-align: right;">字符数变化</th>
+<th style="text-align: right;">字符变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Skill 01</td>
+<td style="text-align: right;">498 → 27</td>
+<td style="text-align: right;">23,493 → 1,609</td>
+<td style="text-align: right;">减少 93.2%</td>
+</tr>
+<tr>
+<td>Skill 02</td>
+<td style="text-align: right;">45 → 45</td>
+<td style="text-align: right;">1,342 → 1,377</td>
+<td style="text-align: right;">增加 2.6%</td>
+</tr>
+<tr>
+<td>Skill 03</td>
+<td style="text-align: right;">41 → 41</td>
+<td style="text-align: right;">1,867 → 1,957</td>
+<td style="text-align: right;">增加 4.8%</td>
+</tr>
+<tr>
+<td>Skill 04</td>
+<td style="text-align: right;">56 → 56</td>
+<td style="text-align: right;">1,885 → 1,925</td>
+<td style="text-align: right;">增加 2.1%</td>
+</tr>
+<tr>
+<td>Skill 05</td>
+<td style="text-align: right;">44 → 44</td>
+<td style="text-align: right;">1,003 → 1,011</td>
+<td style="text-align: right;">增加 0.8%</td>
+</tr>
+<tr>
+<td>Skill 06</td>
+<td style="text-align: right;">64 → 64</td>
+<td style="text-align: right;">2,554 → 3,486</td>
+<td style="text-align: right;">增加 36.5%</td>
+</tr>
+<tr>
+<td>Skill 07</td>
+<td style="text-align: right;">54 → 55</td>
+<td style="text-align: right;">1,724 → 2,026</td>
+<td style="text-align: right;">增加 17.5%</td>
+</tr>
+<tr>
+<td>Skill 08</td>
+<td style="text-align: right;">47 → 43</td>
+<td style="text-align: right;">1,120 → 1,264</td>
+<td style="text-align: right;">增加 12.9%</td>
+</tr>
+<tr>
+<td>Skill 09</td>
+<td style="text-align: right;">368 → 372</td>
+<td style="text-align: right;">17,405 → 17,579</td>
+<td style="text-align: right;">增加 1.0%</td>
+</tr>
+<tr>
+<td>Skill 10</td>
+<td style="text-align: right;">89 → 89</td>
+<td style="text-align: right;">3,197 → 3,467</td>
+<td style="text-align: right;">增加 8.4%</td>
+</tr>
+<tr>
+<td>Skill 11</td>
+<td style="text-align: right;">153 → 150</td>
+<td style="text-align: right;">4,816 → 5,323</td>
+<td style="text-align: right;">增加 10.5%</td>
+</tr>
+<tr>
+<td>Skill 12</td>
+<td style="text-align: right;">146 → 153</td>
+<td style="text-align: right;">4,449 → 5,057</td>
+<td style="text-align: right;">增加 13.7%</td>
+</tr>
+</tbody>
+</table>
+<p>这些数据说明了两种不同变化。</p>
+<p>一种是把长主说明改成简短入口。Skill 01 的主说明减少了 93.2%，但详细方法进入了参考文件，所以不能把 93.2% 写成整份 Skill 包的减少比例。</p>
+<p>另一种是把条件写准确。有些说明补充了适用范围、当前有效的资料位置或已有决定的复用条件，字符数反而增加。是否值得保留这些内容，要看它们能否减少误操作和无关步骤，不能要求每份文件都按同一个比例缩短。</p>
+<p>如果你也想取得同样口径的数据，可以这样问：</p>
+<blockquote>
+<p>请根据本轮实际应用清单，区分内容改写、新增、迁移和原样保留。只对内容新增或改写的文件统计原版与新版的行数、字符数和变化比例，AGENTS.md、SKILL.md 及全部改动文件分别列出。真正新增文件的原版按零计算；迁移文件以迁移前的原包为基线，不能因路径改变计为新增。未改动资料和报告不计入。说明哪些内容删除了、哪些移动了、哪些因为补齐必要要求而增加。</p>
+</blockquote>
+<p><strong>这轮 19 个项目的审查与正式应用耗时约 20 分 36 秒，主任务启动了 3 个子 Agent。</strong> 子 Agent 是协助处理独立工作的其他 AI 助手，这次按互不依赖的范围分工，主任务汇总并应用最终文件。时长按这一轮检查和修改的运行记录计算。</p>
+<p>这只是本次运行方式，不意味着整理规则必须使用多个助手。若希望控制额外开销，可以在提示词中写明：“本任务由当前 Agent 完成，不启动子 Agent；独立读取可以批量执行。”实际耗时仍取决于处理范围和检查内容。</p>
+<p><strong>目前能确认的是：本轮范围内的正式文件已经更新，整体字符数减少约 6.6%，主说明、引用资料及部分流程也完成了调整。</strong> 新任务是否更快、是否少读无关资料、是否减少 Token，仍没有相同条件下的前后对比。</p>
+<p>Token 是模型处理文本时的计量单位，与字符数不一一对应；多个助手的用量和缓存还需要分别核对。本次没有核定包含全部子 Agent 的完整用量或费用，因此不能把字符减少 6.6% 写成 Token 或费用也降低了 6.6%。</p>
+<p>现在可以从第五节的三个任务开始观察：该用的 Skill 能选中，小修改能直接完成，完整任务能交付到位。把具体结果记下来，再决定哪些调整保留、哪些继续修正。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      内容采用 Markdown 维护 · 测测的 AI 笔记
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/tag-filter.js"></script>
+      
+    
+  </body>
+</html>

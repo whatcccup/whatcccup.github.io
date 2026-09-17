@@ -1,0 +1,3242 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="在 macOS 上为 Obsidian Web Clipper 增加本地转录能力，让没有平台字幕的视频也能生成带时间戳的学习素材。">
+      
+      
+      
+      
+        <link rel="prev" href="../obsidian-web-clipper-bilibili/">
+      
+      
+        <link rel="next" href="../claudian-theschema-setup/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>利用 Obsidian Web Clipper 快速学习视频内容（下篇）：无字幕视频自动转录 - 测测的 AI 笔记</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#obsidian-web-clipper" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="测测的 AI 笔记" class="md-header__button md-logo" aria-label="测测的 AI 笔记" data-md-component="logo">
+      
+  <img src="../../../assets/mark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            测测的 AI 笔记
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              利用 Obsidian Web Clipper 快速学习视频内容（下篇）：无字幕视频自动转录
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  教程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../projects/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Projects
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="测测的 AI 笔记" class="md-nav__button md-logo" aria-label="测测的 AI 笔记" data-md-component="logo">
+      
+  <img src="../../../assets/mark.svg" alt="logo">
+
+    </a>
+    测测的 AI 笔记
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教程
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    教程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../codex/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Codex
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codex/codex-with-chatgpt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex 额度不够用？这个 5000 Star 的 Skill，帮你“白嫖”ChatGPT 额度
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codex/astra-agents-skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPT-6 Astra 升级了，你的 Codex 还在用旧规则？
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codex/astra-agents-skills-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex 规则整理：完整提示词与全量修改版
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Obsidian
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Obsidian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../obsidian-web-clipper-bilibili/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    利用 Obsidian Web Clipper 快速学习 B 站视频内容
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    利用 Obsidian Web Clipper 快速学习视频内容（下篇）：无字幕视频自动转录
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    利用 Obsidian Web Clipper 快速学习视频内容（下篇）：无字幕视频自动转录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 先理解最终会安装什么
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 先理解最终会安装什么">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 安装位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 不会安装什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 开始前的准备
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 开始前的准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 打开终端
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 认识路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 确认 Mac 架构
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 先检查电脑是否已经满足前置条件
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 安装唯一的一套 Homebrew
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 安装唯一的一套 Homebrew">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-apple-command-line-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 安装 Apple Command Line Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 执行 Homebrew 官方安装命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-apple-silicon-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 配置 Apple Silicon PATH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 验证只有一套 Homebrew
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-transcript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 安装 Transcript 的最少前置工具
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 安装 Transcript 的最少前置工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-nodejs-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 安装 Node.js 和 uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 验证路径和版本
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-transcript-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 下载 Transcript macOS 安装包
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 下载 Transcript macOS 安装包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 下载正确文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 解压到稳定目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-helper-tiny" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 一键安装 Helper，并下载 tiny 模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 一键安装 Helper，并下载 tiny 模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 运行安装器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-tiny" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 在模型菜单选择 tiny
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 等待安装完成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 检查安装结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-chrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 在 Chrome 加载扩展
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 在 Chrome 加载扩展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 避免同时启用多个版本
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-obsidian-web-clipper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 配置 Obsidian Web Clipper
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 配置 Obsidian Web Clipper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-obsidian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 准备 Obsidian
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 打开扩展设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 准备验证模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-transcript-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 配置 Transcript Generator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 配置 Transcript Generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 基础设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-asr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 ASR 设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Cookies 设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-youtube" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 使用没有字幕的 YouTube 视频完成验证
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. 使用没有字幕的 YouTube 视频完成验证">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 打开视频
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 打开剪藏界面
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 开始生成字幕
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-transcript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 验证 transcript 变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-obsidian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 保存到 Obsidian
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. 日常如何启动和停止
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 日常如何启动和停止">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 启动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 停止
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-helper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 确认 Helper 是否仍在监听
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 查看日志
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. 后续升级
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. 常见故障排除
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. 常见故障排除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-brew-command-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 brew: command not found
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Homebrew 路径与电脑架构不一致
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-nodejs-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 安装器提示缺少 Node.js 或 uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-uv-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 uv sync 下载失败
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145-tiny" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 tiny 模型下载失败
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#146-helper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6 Helper 未连接
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#147-1270018484-401" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.7 浏览器直接打开 127.0.0.1:8484 显示 401
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#148-youtube-nsig-requested-format-is-not-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.8 YouTube 出现 nsig 或 Requested format is not available
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#149" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.9 生成按钮没有出现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1410-transcript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.10 transcript 已生成，但模板里没有内容
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1411-cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.11 自动读取 Cookies 没有反应
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1412" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.12 弹窗关闭后看不到进度
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. 把问题交给 AI Agent 时怎么描述
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. 最终验收清单
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. 数据位置与隐私边界
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. 官方参考
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claudian-theschema-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claudian 完整安装与 Skill 配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../obsidian-shortcuts-voice-journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用 iPhone 快捷指令语音录入 Obsidian：三分支写入灵感、TODO 与日记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 先理解最终会安装什么
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 先理解最终会安装什么">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 安装位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 不会安装什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 开始前的准备
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 开始前的准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 打开终端
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 认识路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 确认 Mac 架构
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 先检查电脑是否已经满足前置条件
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 安装唯一的一套 Homebrew
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 安装唯一的一套 Homebrew">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-apple-command-line-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 安装 Apple Command Line Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 执行 Homebrew 官方安装命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-apple-silicon-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 配置 Apple Silicon PATH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 验证只有一套 Homebrew
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-transcript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 安装 Transcript 的最少前置工具
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 安装 Transcript 的最少前置工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-nodejs-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 安装 Node.js 和 uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 验证路径和版本
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-transcript-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 下载 Transcript macOS 安装包
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 下载 Transcript macOS 安装包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 下载正确文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 解压到稳定目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-helper-tiny" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 一键安装 Helper，并下载 tiny 模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 一键安装 Helper，并下载 tiny 模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 运行安装器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-tiny" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 在模型菜单选择 tiny
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 等待安装完成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 检查安装结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-chrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 在 Chrome 加载扩展
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 在 Chrome 加载扩展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 避免同时启用多个版本
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-obsidian-web-clipper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 配置 Obsidian Web Clipper
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 配置 Obsidian Web Clipper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-obsidian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 准备 Obsidian
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 打开扩展设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 准备验证模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-transcript-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 配置 Transcript Generator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 配置 Transcript Generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 基础设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-asr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 ASR 设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Cookies 设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-youtube" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 使用没有字幕的 YouTube 视频完成验证
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. 使用没有字幕的 YouTube 视频完成验证">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 打开视频
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 打开剪藏界面
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 开始生成字幕
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-transcript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 验证 transcript 变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-obsidian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 保存到 Obsidian
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. 日常如何启动和停止
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 日常如何启动和停止">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 启动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 停止
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-helper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 确认 Helper 是否仍在监听
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 查看日志
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. 后续升级
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. 常见故障排除
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. 常见故障排除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-brew-command-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 brew: command not found
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Homebrew 路径与电脑架构不一致
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-nodejs-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 安装器提示缺少 Node.js 或 uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-uv-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 uv sync 下载失败
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145-tiny" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 tiny 模型下载失败
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#146-helper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6 Helper 未连接
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#147-1270018484-401" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.7 浏览器直接打开 127.0.0.1:8484 显示 401
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#148-youtube-nsig-requested-format-is-not-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.8 YouTube 出现 nsig 或 Requested format is not available
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#149" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.9 生成按钮没有出现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1410-transcript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.10 transcript 已生成，但模板里没有内容
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1411-cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.11 自动读取 Cookies 没有反应
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1412" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.12 弹窗关闭后看不到进度
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. 把问题交给 AI Agent 时怎么描述
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. 最终验收清单
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. 数据位置与隐私边界
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. 官方参考
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span class="course-kicker">OBSIDIAN · TRANSCRIPT</span></p>
+<h1 id="obsidian-web-clipper">利用 Obsidian Web Clipper 快速学习视频内容（下篇）：无字幕视频自动转录</h1>
+<p class="course-lead">在 macOS 上为 Obsidian Web Clipper 增加本地转录能力，让没有平台字幕的视频也能生成带时间戳的学习素材。</p>
+
+<div class="course-meta"><span>教程</span><span>更新：2026-07-31</span><span>B 站视频</span></div>
+
+<div class="video-embed">
+  <iframe src="https://player.bilibili.com/player.html?bvid=BV1F93463E35&page=1&high_quality=1&danmaku=0&autoplay=0" title="B 站课程视频" loading="lazy" allowfullscreen></iframe>
+</div>
+
+<p class="video-link"><a href="https://www.bilibili.com/video/BV1F93463E35/" target="_blank" rel="noopener">在 B 站打开 →</a></p>
+
+<blockquote>
+<p>适用系统：macOS + Chrome/Chromium
+教程版本：2026-07-28
+验证基线：Obsidian Web Clipper CN · Transcript <code>v0.3.0</code>
+安装方式：GitHub Release macOS 安装包
+本地识别：Faster Whisper <code>tiny</code></p>
+</blockquote>
+<p>这份教程只讲 <strong>Obsidian Web Clipper CN · Transcript</strong>，不安装 BiliNote，不使用 DMG，不使用 Docker，也不创建开机自启服务。</p>
+<p>目标是在一台普通 Mac 上完成以下闭环：</p>
+<ol>
+<li>检查电脑是否已经具备所需环境。</li>
+<li>只安装缺少的 Homebrew、Node.js 或 uv。</li>
+<li>安装浏览器扩展、按需 Helper 和 Faster Whisper <code>tiny</code> 模型。</li>
+<li>使用一个没有平台字幕的 YouTube 视频生成带时间戳的 transcript。</li>
+<li>验证 <code>{{transcript}}</code> 能进入模板并保存到 Obsidian。</li>
+<li>掌握日常启动、停止、升级和故障排除方法。</li>
+</ol>
+<h2 id="1">1. 先理解最终会安装什么</h2>
+<p>Transcript 由三个部分组成：</p>
+<div class="highlight"><pre><span></span><code>Chrome 扩展
+            ↓ Native Messaging
+        一次性 Launcher
+            ↓ 按需启动
+        Transcript Helper（127.0.0.1:8484）
+            ↓
+        yt-dlp 下载音频 + Faster Whisper tiny 本地识别
+</code></pre></div>
+<p>三个部分分别负责：</p>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>作用</th>
+<th>是否一直运行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chrome 扩展</td>
+<td>展示剪藏界面、模板、设置和生成按钮</td>
+<td>随 Chrome 运行</td>
+</tr>
+<tr>
+<td>Launcher</td>
+<td>接收扩展的启动、停止、状态命令</td>
+<td>执行完立即退出</td>
+</tr>
+<tr>
+<td>Helper</td>
+<td>下载音频、识别字幕、管理模型和缓存</td>
+<td>按需启动，空闲 15 分钟后退出</td>
+</tr>
+</tbody>
+</table>
+<p>安装完成后不会出现一个独立的 Transcript App，也不需要每天在终端启动 Python 服务。</p>
+<h3 id="11">1.1 安装位置</h3>
+<p>本教程以以下稳定位置为例：</p>
+<div class="highlight"><pre><span></span><code>~/obsidian-web-clipper-cn-transcript/
+</code></pre></div>
+<p>这里保存 GitHub Release 解压后的扩展文件和安装脚本。它不是强制路径；用户也可以选择其他固定目录。Chrome 会持续读取其中的：</p>
+<div class="highlight"><pre><span></span><code>~/obsidian-web-clipper-cn-transcript/extension/dist/
+</code></pre></div>
+<p>Helper 的实际运行副本安装在：</p>
+<div class="highlight"><pre><span></span><code>~/Library/Application Support/ObsidianWebClipperCNTranscript/
+</code></pre></div>
+<p>模型和 transcript 缓存保存在：</p>
+<div class="highlight"><pre><span></span><code>~/.cache/obsidian-web-clipper-cn-transcript/
+</code></pre></div>
+<h3 id="12">1.2 不会安装什么</h3>
+<p>本教程不会：</p>
+<ul>
+<li>安装 BiliNote。</li>
+<li>使用 DMG。</li>
+<li>使用 Docker。</li>
+<li>创建 LaunchAgent。</li>
+<li>设置开机自动启动。</li>
+<li>安装独立的系统 Python。</li>
+<li>安装数据库、RAG、GPT 笔记后台或 PDF 服务。</li>
+</ul>
+<h2 id="2">2. 开始前的准备</h2>
+<p>需要准备：</p>
+<ul>
+<li>一台 macOS 电脑。</li>
+<li>管理员账户及登录密码。</li>
+<li>Chrome 或 Chromium 浏览器。</li>
+<li>Obsidian 桌面版。</li>
+<li>稳定网络。</li>
+<li>建议至少预留 5 GB 磁盘空间。</li>
+</ul>
+<p>Faster Whisper <code>tiny</code> 模型本身约几十 MB，但安装过程还会保存 Python 运行时、依赖和缓存，所以不要只按模型大小预留空间。</p>
+<h3 id="21">2.1 打开终端</h3>
+<p>最简单的方法：</p>
+<ol>
+<li>按 <code>Command + Space</code>。</li>
+<li>输入“终端”或 <code>Terminal</code>。</li>
+<li>按回车。</li>
+</ol>
+<p>终端最后通常显示 <code>%</code>。命令粘贴在 <code>%</code> 后面，不要复制 <code>%</code> 本身。</p>
+<h3 id="22">2.2 认识路径</h3>
+<p>下面的命令显示当前所在目录：</p>
+<div class="highlight"><pre><span></span><code>pwd
+</code></pre></div>
+<p>下面的命令回到当前用户的主目录：</p>
+<div class="highlight"><pre><span></span><code>cd ~
+</code></pre></div>
+<p><code>~</code> 代表当前用户的主目录。例如用户名是 <code>whatcccup</code> 时，<code>~</code> 通常代表：</p>
+<div class="highlight"><pre><span></span><code>/Users/whatcccup
+</code></pre></div>
+<p>路径中有空格时必须使用引号，例如：</p>
+<div class="highlight"><pre><span></span><code>cd "$HOME/Library/Application Support"
+</code></pre></div>
+<h3 id="23-mac">2.3 确认 Mac 架构</h3>
+<p>下面的命令检查处理器架构：</p>
+<div class="highlight"><pre><span></span><code>uname -m
+</code></pre></div>
+<p>可能结果：</p>
+<ul>
+<li><code>arm64</code>：Apple Silicon，Homebrew 标准位置是 <code>/opt/homebrew</code>。</li>
+<li><code>x86_64</code>：Intel Mac，Homebrew 标准位置是 <code>/usr/local</code>。</li>
+</ul>
+<p>本教程两种架构都能理解，但后文主要展示当前更常见的 Apple Silicon 路径。</p>
+<h2 id="3">3. 先检查电脑是否已经满足前置条件</h2>
+<p>很多 Mac 已经安装过 Homebrew、Node.js 或 uv。先检查，可以避免重复安装。</p>
+<p>下面的命令只读取当前状态，不会安装或删除任何内容：</p>
+<div class="highlight"><pre><span></span><code>echo "Architecture: $(uname -m)"
+
+        for command_name in brew node npm uv; do
+          if command -v "$command_name" &gt;/dev/null 2&gt;&amp;1; then
+            echo "$command_name: $(command -v "$command_name")"
+          else
+            echo "$command_name: NOT INSTALLED"
+          fi
+        done
+
+        if command -v brew &gt;/dev/null 2&gt;&amp;1; then
+          echo "Homebrew prefix: $(brew --prefix)"
+        fi
+
+        if command -v node &gt;/dev/null 2&gt;&amp;1; then
+          echo "Node.js version: $(node --version)"
+        fi
+
+        if command -v npm &gt;/dev/null 2&gt;&amp;1; then
+          echo "npm version: $(npm --version)"
+        fi
+
+        if command -v uv &gt;/dev/null 2&gt;&amp;1; then
+          echo "uv version: $(uv --version)"
+        fi
+</code></pre></div>
+<p>根据结果选择后续章节：</p>
+<ul>
+<li><code>brew</code>、<code>node</code>、<code>npm</code>、<code>uv</code> 都有路径，且 Node.js 为 <code>v18</code> 或更高版本：前置条件已经满足，直接跳到第 6 章下载 Transcript。</li>
+<li><code>brew</code> 显示 <code>NOT INSTALLED</code>：继续第 4 章安装 Homebrew。</li>
+<li>Homebrew 已安装，但 <code>node</code>、<code>npm</code> 或 <code>uv</code> 缺失：跳到第 5 章安装前置工具。</li>
+<li>Node.js 低于 <code>v18</code>：跳到第 5 章，通过 Homebrew 升级 Node.js。</li>
+</ul>
+<p>Apple Silicon 的 Homebrew prefix 应为 <code>/opt/homebrew</code>，Intel Mac 通常为 <code>/usr/local</code>。如果路径符合架构，就不需要卸载或重新安装 Homebrew。</p>
+<h2 id="4-homebrew">4. 安装唯一的一套 Homebrew</h2>
+<h3 id="41-apple-command-line-tools">4.1 安装 Apple Command Line Tools</h3>
+<p>下面的命令检查命令行工具：</p>
+<div class="highlight"><pre><span></span><code>xcode-select -p
+</code></pre></div>
+<p>如果显示 <code>/Library/Developer/CommandLineTools</code> 或 Xcode 内部路径，说明已经安装。</p>
+<p>如果提示找不到，执行：</p>
+<div class="highlight"><pre><span></span><code>xcode-select --install
+</code></pre></div>
+<p>在系统弹窗中完成安装，然后重新打开终端。</p>
+<h3 id="42-homebrew">4.2 执行 Homebrew 官方安装命令</h3>
+<p>下面的命令来自 Homebrew 官方安装器：</p>
+<div class="highlight"><pre><span></span><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+</code></pre></div>
+<p>安装期间：</p>
+<ul>
+<li>终端会说明准备安装到哪里。</li>
+<li>可能要求输入 Mac 登录密码。</li>
+<li>输入密码时不会出现圆点或星号，这是正常现象。</li>
+<li>出现 <code>Press RETURN/ENTER to continue</code> 时按回车。</li>
+</ul>
+<p>Apple Silicon 正确目标应是：</p>
+<div class="highlight"><pre><span></span><code>/opt/homebrew
+</code></pre></div>
+<p>如果安装器准备使用 <code>$HOME/.homebrew</code>，先中止并检查之前的环境，不要继续制造第二套 Homebrew。</p>
+<h3 id="43-apple-silicon-path">4.3 配置 Apple Silicon PATH</h3>
+<p>Apple Silicon 用户执行下面这些命令：先确保 macOS 的标准系统命令目录存在于 PATH，再加载 Homebrew。这样当前终端和以后打开的终端都能找到 <code>bash</code>、<code>ls</code> 和 <code>brew</code>：</p>
+<div class="highlight"><pre><span></span><code>echo 'export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"' &gt;&gt; "$HOME/.zprofile"
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' &gt;&gt; "$HOME/.zprofile"
+        source "$HOME/.zprofile"
+        rehash
+</code></pre></div>
+<p>Intel Mac 应使用安装器最后显示的 <code>Next steps</code>，通常是 <code>/usr/local/bin/brew</code>。</p>
+<h3 id="44-homebrew">4.4 验证只有一套 Homebrew</h3>
+<p>下面的命令检查路径与健康状态：</p>
+<div class="highlight"><pre><span></span><code>command -v brew
+        brew --prefix
+        brew --version
+        type -a brew
+        brew doctor
+</code></pre></div>
+<p>Apple Silicon 的关键结果应为：</p>
+<div class="highlight"><pre><span></span><code>/opt/homebrew/bin/brew
+        /opt/homebrew
+</code></pre></div>
+<p><code>type -a brew</code> 不应再显示 <code>$HOME/.homebrew/bin/brew</code>。</p>
+<h2 id="5-transcript">5. 安装 Transcript 的最少前置工具</h2>
+<p>Release 安装包已经包含构建完成的 Chrome 扩展，所以普通用户不需要安装 npm 依赖或运行 Webpack。</p>
+<p>但 Transcript 仍需要：</p>
+<ul>
+<li>Node.js：帮助 yt-dlp 完整解析 YouTube。</li>
+<li>uv：准备隔离的 Python 3.11 和 Helper 依赖。</li>
+</ul>
+<p>用户不需要自己安装 Python。安装脚本会通过 uv 准备项目专用 Python 3.11，不会替换系统 Python。</p>
+<h3 id="51-nodejs-uv">5.1 安装 Node.js 和 uv</h3>
+<p>下面的命令通过唯一的 Homebrew 安装两项工具：</p>
+<div class="highlight"><pre><span></span><code>brew install node uv
+</code></pre></div>
+<h3 id="52">5.2 验证路径和版本</h3>
+<p>下面的命令确认 Node.js、npm 和 uv 都来自当前 Homebrew：</p>
+<div class="highlight"><pre><span></span><code>command -v node
+        node --version
+        command -v npm
+        npm --version
+        command -v uv
+        uv --version
+</code></pre></div>
+<p>Transcript 要求 Node.js 18 或更高版本。Apple Silicon 的路径通常以 <code>/opt/homebrew/</code> 开头。</p>
+<p>不需要额外执行：</p>
+<div class="highlight"><pre><span></span><code>pip install ...
+        python -m venv ...
+        npm install ...
+</code></pre></div>
+<p>这些工作由 Release 安装脚本按项目锁定的方式完成。</p>
+<h2 id="6-transcript-macos">6. 下载 Transcript macOS 安装包</h2>
+<h3 id="61">6.1 下载正确文件</h3>
+<p>打开项目 Release 页面：</p>
+<p><a href="https://github.com/whatcccup/obsidian-web-clipper-cn-transcript/releases/tag/v0.3.0">https://github.com/whatcccup/obsidian-web-clipper-cn-transcript/releases/tag/v0.3.0</a></p>
+<p>下载：</p>
+<div class="highlight"><pre><span></span><code>obsidian-web-clipper-cn-transcript-v0.3.0-macos.zip
+</code></pre></div>
+<p>不要下载：</p>
+<div class="highlight"><pre><span></span><code>obsidian-web-clipper-cn-transcript-v0.3.0-chrome.zip
+</code></pre></div>
+<p><code>-chrome.zip</code> 只有扩展，缺少 Helper 与 Launcher，不能单独生成本地字幕。</p>
+<h3 id="62">6.2 解压到稳定目录</h3>
+<p>可以在 Finder 中双击 ZIP 解压。</p>
+<p>解压后会得到：</p>
+<div class="highlight"><pre><span></span><code>obsidian-web-clipper-cn-transcript-v0.3.0-macos
+</code></pre></div>
+<p>安装包不强制放在 Home 根目录。桌面、下载文件夹或其他有读写权限的位置都可以，但 Chrome 会持续读取其中的扩展文件，因此应选择一个不会随手删除或移动的固定目录。</p>
+<p>不建议放进 <code>Applications</code> 文件夹，因为这里通常用于保存应用程序。下面推荐直接放在当前用户的 Home 目录，并统一使用与项目和 GitHub 仓库相同的名称：</p>
+<div class="highlight"><pre><span></span><code>~/obsidian-web-clipper-cn-transcript
+</code></pre></div>
+<p>也可以使用下面的终端命令解压：</p>
+<div class="highlight"><pre><span></span><code>cd "$HOME/Downloads"
+        ditto -x -k \
+          obsidian-web-clipper-cn-transcript-v0.3.0-macos.zip \
+          "$HOME/Downloads"
+</code></pre></div>
+<p>下面的命令把解压后的文件夹移动到 Home 目录并改名：</p>
+<div class="highlight"><pre><span></span><code>mv \
+          "$HOME/Downloads/obsidian-web-clipper-cn-transcript-v0.3.0-macos" \
+          "$HOME/obsidian-web-clipper-cn-transcript"
+</code></pre></div>
+<p>Home 目录只是推荐示例，不是强制路径。如果改用其他位置，安装完成后同样不要删除或移动该目录。</p>
+<p>从下一节开始，教程使用 <code>/你的实际保存目录/obsidian-web-clipper-cn-transcript</code> 作为占位符。执行命令前，必须把它替换成刚才选择的真实路径。可以在 Finder 中选中文件夹，按 <code>Option + Command + C</code> 复制完整路径。</p>
+<h2 id="7-helper-tiny">7. 一键安装 Helper，并下载 tiny 模型</h2>
+<h3 id="71">7.1 运行安装器</h3>
+<p>下面的命令必须在刚才解压并固定保存的项目目录中执行。请替换成自己的真实路径：</p>
+<div class="highlight"><pre><span></span><code>cd "/你的实际保存目录/obsidian-web-clipper-cn-transcript"
+        bash install.sh
+</code></pre></div>
+<p>安装脚本会：</p>
+<ol>
+<li>检查 Node.js、npm 和 uv。</li>
+<li>使用 Release 中已经构建好的 Chrome 扩展。</li>
+<li>通过 uv 下载隔离的 Python 3.11。</li>
+<li>安装 FastAPI、Uvicorn、yt-dlp、yt-dlp-ejs、Faster Whisper 和 CTranslate2。</li>
+<li>注册 Chrome Native Messaging Host。</li>
+<li>安装按需 Launcher。</li>
+<li>询问是否立即下载 Faster Whisper 模型。</li>
+</ol>
+<h3 id="72-tiny">7.2 在模型菜单选择 tiny</h3>
+<p>安装器会显示类似菜单：</p>
+<div class="highlight"><pre><span></span><code>1) tiny (recommended; extension default)
+        2) Skip
+        3) base
+        4) small
+        5) medium
+        6) large-v3
+        7) large-v3-turbo
+</code></pre></div>
+<p>第一次验证直接按回车即可；也可以输入：</p>
+<div class="highlight"><pre><span></span><code>1
+</code></pre></div>
+<p>然后按回车。</p>
+<p>本教程统一使用 <code>tiny</code>，因为它：</p>
+<ul>
+<li>下载最快。</li>
+<li>占用磁盘和内存最少。</li>
+<li>CPU 识别速度最快。</li>
+<li>足以验证完整流程。</li>
+</ul>
+<p><code>tiny</code> 的识别精度低于更大模型。确认流程成功后，再根据需要切换 <code>base</code>、<code>small</code> 或更大的模型。</p>
+<h3 id="73">7.3 等待安装完成</h3>
+<p>第一次安装需要下载 Python 和多个依赖，耗时取决于网络。不要在下载过程中关闭终端。</p>
+<p>成功时应看到类似输出：</p>
+<div class="highlight"><pre><span></span><code>Transcript Helper installed without LaunchAgent.
+        Faster Whisper model installed: tiny
+        Obsidian Web Clipper CN · Transcript installation completed.
+</code></pre></div>
+<p>Webpack 体积 warning 只会出现在源码构建路径。Release macOS 安装包已经含有预构建扩展，正常情况下不会重新构建 Webpack。</p>
+<h3 id="74">7.4 检查安装结果</h3>
+<p>下面的命令检查 Helper、模型和 Native Messaging Host：</p>
+<div class="highlight"><pre><span></span><code>ls -la "$HOME/Library/Application Support/ObsidianWebClipperCNTranscript"
+        ls -la "$HOME/.cache/obsidian-web-clipper-cn-transcript/models/tiny"
+        ls -l "$HOME/Library/Application Support/Google/Chrome/NativeMessagingHosts/cn.transcript.generator.launcher.json"
+</code></pre></div>
+<p>模型目录中应至少能找到：</p>
+<div class="highlight"><pre><span></span><code>model.bin
+        config.json
+</code></pre></div>
+<p>下面的命令确认没有创建 Transcript LaunchAgent：</p>
+<div class="highlight"><pre><span></span><code>find "$HOME/Library/LaunchAgents" \
+          -maxdepth 1 \
+          \( -iname '*transcript*' -o -iname '*clip*' \) \
+          2&gt;/dev/null
+</code></pre></div>
+<p>正常情况下不应出现 Transcript Generator 的 plist。</p>
+<h2 id="8-chrome">8. 在 Chrome 加载扩展</h2>
+<ol>
+<li>打开 Chrome。</li>
+<li>地址栏输入 <code>chrome://extensions</code>。</li>
+<li>打开右上角“开发者模式”。</li>
+<li>点击“加载未打包的扩展程序”。</li>
+<li>在文件选择窗口按 <code>Command + Shift + G</code>。</li>
+<li>输入下面的路径：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>/你的实际保存目录/obsidian-web-clipper-cn-transcript/extension/dist
+</code></pre></div>
+<ol>
+<li>点击“前往”。</li>
+<li>选择 <code>dist</code> 文件夹。</li>
+</ol>
+<p>成功后会出现：</p>
+<div class="highlight"><pre><span></span><code>Obsidian Web Clipper CN · Transcript
+</code></pre></div>
+<p>建议点击 Chrome 工具栏的拼图图标，把扩展固定到工具栏。</p>
+<h3 id="81">8.1 避免同时启用多个版本</h3>
+<p>如果 Chrome 里同时存在其他 Web Clipper 或从其他目录加载的同名扩展，先停用重复项。</p>
+<ul>
+<li>Obsidian 官方 Web Clipper。</li>
+<li>Obsidian Web Clipper CN。</li>
+<li>从另一个目录加载的 Obsidian Web Clipper CN · Transcript。</li>
+</ul>
+<p>验证期间只保留当前固定目录中 <code>extension/dist</code> 这一份启用，避免点击到错误图标。</p>
+<h2 id="9-obsidian-web-clipper">9. 配置 Obsidian Web Clipper</h2>
+<h3 id="91-obsidian">9.1 准备 Obsidian</h3>
+<ol>
+<li>安装并打开 Obsidian。</li>
+<li>创建或打开一个 Vault。</li>
+<li>确认 Vault 能正常创建笔记。</li>
+<li>保持 Obsidian 至少成功打开过一次。</li>
+</ol>
+<h3 id="92">9.2 打开扩展设置</h3>
+<p>在 <code>chrome://extensions</code> 中找到 Transcript 扩展，点击“详细信息”，再点击“扩展程序选项”；也可以右键工具栏扩展图标进入设置。</p>
+<h3 id="93">9.3 准备验证模板</h3>
+<p>创建或编辑一个 Web Clipper 模板，正文至少包含：</p>
+<div class="highlight"><pre><span></span><code># {{title}}
+
+        来源：{{url}}
+
+        ## Transcript
+
+        {{transcript}}
+</code></pre></div>
+<p>必须把 <code>{{transcript}}</code> 写进模板正文。变量里有字幕并不代表每个模板都会自动展示字幕。</p>
+<p>如果还要让 Interpreter 使用字幕，应在对应提示词或上下文中明确引用 <code>{{transcript}}</code>。</p>
+<h2 id="10-transcript-generator">10. 配置 Transcript Generator</h2>
+<p>在扩展设置侧栏进入：</p>
+<div class="highlight"><pre><span></span><code>Transcript Generator
+</code></pre></div>
+<h3 id="101">10.1 基础设置</h3>
+<p>依次操作：</p>
+<ol>
+<li>启用 Transcript Generator。</li>
+<li>保持 Helper 地址为默认值 <code>http://127.0.0.1:8484</code>。</li>
+<li>点击“启动”或“测试连接”。</li>
+<li>等待状态显示“已就绪”。</li>
+</ol>
+<p>Helper 第一次启动由 Chrome Native Messaging 完成，不需要手动运行 Python。</p>
+<h3 id="102-asr">10.2 ASR 设置</h3>
+<p>选择：</p>
+<div class="highlight"><pre><span></span><code>Faster Whisper
+</code></pre></div>
+<p>模型选择：</p>
+<div class="highlight"><pre><span></span><code>tiny
+</code></pre></div>
+<p>点击“刷新状态”，应显示 <code>tiny</code> 已安装及模型大小。</p>
+<p>如果安装阶段跳过了模型，可以在这里点击“下载”。下载完成前不能开始本地字幕任务。</p>
+<h3 id="103-cookies">10.3 Cookies 设置</h3>
+<p>第一次验证指定的公开视频时，Bilibili 和 YouTube 都先选择：</p>
+<div class="highlight"><pre><span></span><code>不使用
+</code></pre></div>
+<p>这样可以先排除 Cookie 权限和账号状态的影响。</p>
+<p>只有遇到登录限制、年龄限制、会员或地区限制时，再选择：</p>
+<ul>
+<li>自动读取。</li>
+<li>手动导入 Cookie Header。</li>
+<li>手动导入 Netscape <code>cookies.txt</code>。</li>
+</ul>
+<p>自动读取时：</p>
+<ol>
+<li>先在当前 Chrome 用户中登录对应网站。</li>
+<li>在设置中选择“自动读取”。</li>
+<li>点击“读取并验证”。</li>
+<li>批准 Chrome Cookies 权限。</li>
+<li>确认页面显示成功数量和更新时间。</li>
+</ol>
+<p>Cookies 只保存在该扩展的 <code>chrome.storage.local</code>，不会写入 transcript 缓存或 Helper 日志。不要把 Cookie 发到课程群、GitHub Issue 或 AI 对话。</p>
+<h2 id="11-youtube">11. 使用没有字幕的 YouTube 视频完成验证</h2>
+<p>自行选择一个没有平台字幕的 YouTube 视频，用于验证“下载音轨并使用 Faster Whisper 生成 transcript”的完整流程。不要使用教程中的固定链接，因为视频字幕状态和访问策略可能随时变化。</p>
+<h3 id="111">11.1 打开视频</h3>
+<ol>
+<li>使用已安装扩展的 Chrome 打开一个确认没有平台字幕的 YouTube 视频。</li>
+<li>等待 YouTube 页面完全加载。</li>
+<li>确认地址栏仍是该视频的 <code>watch?v=...</code> 地址。</li>
+</ol>
+<h3 id="112">11.2 打开剪藏界面</h3>
+<p>可以使用弹出窗口或嵌入式模式：</p>
+<ul>
+<li>点击工具栏扩展图标打开弹出窗口。</li>
+<li>或把 Web Clipper 的打开行为设为“嵌入式”。</li>
+</ul>
+<p>两种入口都应显示 Transcript Generator。</p>
+<p>如果 Web Clipper 能直接取得平台字幕，就继续使用原生 <code>{{transcript}}</code>，不应该强制启动 Helper。</p>
+<p>如果没有可用字幕，应出现可展开的 Transcript Generator 面板。</p>
+<h3 id="113">11.3 开始生成字幕</h3>
+<p>展开 Transcript Generator，点击生成按钮。</p>
+<p>预期状态顺序为：</p>
+<div class="highlight"><pre><span></span><code>正在下载音频
+        正在本地识别
+        字幕已生成
+</code></pre></div>
+<p>任务提交后可以关闭弹窗。关闭弹窗不会取消任务；重新打开同一个视频的剪藏界面可以恢复任务状态。扩展图标可能显示 <code>ASR</code> 状态提示。</p>
+<p>Faster Whisper <code>tiny</code> 使用 CPU 和 int8 计算。实际耗时受视频时长、网络和 Mac 性能影响。</p>
+<h3 id="114-transcript">11.4 验证 transcript 变量</h3>
+<p>生成完成后检查：</p>
+<ol>
+<li>Transcript Generator 状态显示“字幕已生成”。</li>
+<li>Web Clipper 的变量检查器中存在 <code>transcript</code>。</li>
+<li>transcript 包含文字和时间戳。</li>
+<li>模板正文的 <code>{{transcript}}</code> 已被替换为实际字幕，而不是保留花括号。</li>
+</ol>
+<p>如果变量检查器里有字幕，但模板正文没有：</p>
+<ol>
+<li>确认当前选中的模板就是刚才编辑的模板。</li>
+<li>确认正文使用的是精确拼写 <code>{{transcript}}</code>。</li>
+<li>切换到另一个模板再切回来，触发重新渲染。</li>
+<li>重新打开剪藏界面。</li>
+</ol>
+<h3 id="115-obsidian">11.5 保存到 Obsidian</h3>
+<ol>
+<li>选择目标 Vault 和文件夹。</li>
+<li>点击 Web Clipper 原有的保存按钮。</li>
+<li>如果 Chrome 询问是否打开 Obsidian，选择允许。</li>
+<li>在 Obsidian 中打开新笔记。</li>
+</ol>
+<p>最终笔记应包含：</p>
+<ul>
+<li>视频标题。</li>
+<li>视频链接。</li>
+<li><code>Transcript</code> 标题。</li>
+<li>带时间戳的字幕正文。</li>
+</ul>
+<p>这证明 Transcript Generator 没有建立第二套保存流程，而是把结果写回 Web Clipper 原有的 <code>{{transcript}}</code>。</p>
+<h2 id="12_1">12. 日常如何启动和停止</h2>
+<h3 id="121">12.1 启动</h3>
+<p>安装完成后，日常不需要打开终端。</p>
+<p>最自然的启动方式：</p>
+<ol>
+<li>打开 Chrome 中的 Bilibili 或 YouTube 视频。</li>
+<li>打开 Transcript 扩展。</li>
+<li>在无字幕视频上点击生成字幕。</li>
+<li>扩展通过 Native Messaging 自动启动 Helper。</li>
+</ol>
+<p>也可以进入：</p>
+<div class="highlight"><pre><span></span><code>扩展设置 → Transcript Generator → 启动
+</code></pre></div>
+<h3 id="122">12.2 停止</h3>
+<p>主动停止：</p>
+<div class="highlight"><pre><span></span><code>扩展设置 → Transcript Generator → 停止
+</code></pre></div>
+<p>不主动停止也可以。Helper 在没有任务和模型下载时，空闲约 15 分钟会自动退出。</p>
+<p>任务执行期间不会因为弹窗关闭而停止，也不会因为空闲计时误退。</p>
+<h3 id="123-helper">12.3 确认 Helper 是否仍在监听</h3>
+<p>下面的命令只检查端口：</p>
+<div class="highlight"><pre><span></span><code>lsof -nP -iTCP:8484 -sTCP:LISTEN
+</code></pre></div>
+<ul>
+<li>有输出：Helper 正在运行。</li>
+<li>没有输出：Helper 已停止。</li>
+</ul>
+<h3 id="124">12.4 查看日志</h3>
+<p>Helper 日志位置：</p>
+<div class="highlight"><pre><span></span><code>~/Library/Application Support/ObsidianWebClipperCNTranscript/logs/helper.log
+</code></pre></div>
+<p>下面的命令查看最近 100 行日志：</p>
+<div class="highlight"><pre><span></span><code>tail -n 100 \
+          "$HOME/Library/Application Support/ObsidianWebClipperCNTranscript/logs/helper.log"
+</code></pre></div>
+<p>日志不应包含完整 Cookies。如果准备把日志发给别人，仍应先检查其中是否出现个人路径、视频地址或其他隐私信息。</p>
+<h2 id="13">13. 后续升级</h2>
+<p>本教程使用 Release ZIP，不是 Git clone，因此升级方式是下载新 Release，而不是执行 <code>git pull</code>。</p>
+<p>升级步骤：</p>
+<ol>
+<li>下载最新版 <code>-macos.zip</code>。</li>
+<li>解压到一个新的临时目录。</li>
+<li>进入新版目录。</li>
+<li>执行覆盖安装。</li>
+</ol>
+<p>下面的命令在新版目录执行覆盖安装：</p>
+<div class="highlight"><pre><span></span><code>cd "/新版安装包的实际目录"
+        bash install.sh --yes
+</code></pre></div>
+<p>完成后：</p>
+<ol>
+<li>打开 <code>chrome://extensions</code>。</li>
+<li>找到原 Transcript 扩展。</li>
+<li>如果 Chrome 仍指向之前解压的版本目录，应把新版安装包放到固定目录，并重新加载其中的 <code>extension/dist</code>。</li>
+<li>点击“重新加载”。</li>
+</ol>
+<p>覆盖安装不会主动删除：</p>
+<ul>
+<li>浏览器中的 Web Clipper 模板。</li>
+<li>Transcript 设置和 Cookies。</li>
+<li><code>~/.cache/obsidian-web-clipper-cn-transcript/models/</code> 中的模型。</li>
+<li>transcript 缓存。</li>
+</ul>
+<p>不要直接使用 Obsidian Web Clipper CN 上游 Release 覆盖当前扩展，否则会移除 Transcript 集成功能。应等待本项目合并并发布对应版本。</p>
+<h2 id="14">14. 常见故障排除</h2>
+<h3 id="141-brew-command-not-found">14.1 <code>brew: command not found</code></h3>
+<p>Apple Silicon 先检查文件是否存在：</p>
+<div class="highlight"><pre><span></span><code>/bin/ls -l /opt/homebrew/bin/brew
+</code></pre></div>
+<p>如果存在，先临时恢复标准系统路径，再加载 Homebrew 环境：</p>
+<div class="highlight"><pre><span></span><code>export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+        rehash
+</code></pre></div>
+<p>为了让以后打开的终端也生效，确认 <code>.zprofile</code> 同时包含标准系统路径和 Homebrew 配置：</p>
+<div class="highlight"><pre><span></span><code>/usr/bin/grep -nE 'export PATH|brew shellenv' "$HOME/.zprofile" 2&gt;/dev/null
+</code></pre></div>
+<h3 id="142-homebrew">14.2 Homebrew 路径与电脑架构不一致</h3>
+<p>执行：</p>
+<div class="highlight"><pre><span></span><code>type -a brew
+        command -v brew
+        brew --prefix
+</code></pre></div>
+<p>Apple Silicon 正常使用 <code>/opt/homebrew</code>，Intel Mac 通常使用 <code>/usr/local</code>。如果 <code>brew --prefix</code> 与电脑架构不一致，先不要继续安装 Transcript；请根据 Homebrew 官方文档修正当前 Homebrew，再重新运行第 3 章的检查。</p>
+<h3 id="143-nodejs-uv">14.3 安装器提示缺少 Node.js 或 uv</h3>
+<p>检查：</p>
+<div class="highlight"><pre><span></span><code>command -v node
+        node --version
+        command -v uv
+        uv --version
+</code></pre></div>
+<p>如果缺失，通过当前唯一 Homebrew 安装：</p>
+<div class="highlight"><pre><span></span><code>brew install node uv
+</code></pre></div>
+<h3 id="144-uv-sync">14.4 <code>uv sync</code> 下载失败</h3>
+<p>先重新执行一次安装。短暂网络中断不代表环境损坏：</p>
+<div class="highlight"><pre><span></span><code>cd "/你的实际保存目录/obsidian-web-clipper-cn-transcript"
+        bash install.sh
+</code></pre></div>
+<p>如果确认官方 PyPI 在当前网络持续不可用，可以只为这次安装临时指定镜像：</p>
+<div class="highlight"><pre><span></span><code>cd "/你的实际保存目录/obsidian-web-clipper-cn-transcript"
+        UV_DEFAULT_INDEX=https://pypi.tuna.tsinghua.edu.cn/simple \
+          bash install.sh
+</code></pre></div>
+<p>不要同时修改 Homebrew、npm、PyPI 和 Hugging Face 的所有数据源。先根据错误确认失败发生在哪个环节。</p>
+<h3 id="145-tiny">14.5 tiny 模型下载失败</h3>
+<p>模型来自 Hugging Face。先在扩展设置中选择 <code>tiny</code> 并点击重试下载。</p>
+<p>如果确认是 Hugging Face 连接问题，可以在终端中带临时镜像环境重新运行安装器，并再次选择 <code>tiny</code>：</p>
+<div class="highlight"><pre><span></span><code>cd "/你的实际保存目录/obsidian-web-clipper-cn-transcript"
+        HF_ENDPOINT=https://hf-mirror.com bash install.sh
+</code></pre></div>
+<p>检测到已有 Helper 时，安装器会询问是否覆盖。覆盖程序文件不会删除已有模型和浏览器设置。</p>
+<h3 id="146-helper">14.6 Helper 未连接</h3>
+<p>依次检查：</p>
+<ol>
+<li>Chrome 当前加载的是固定项目目录中的 <code>extension/dist</code>。</li>
+<li>Native Messaging Host 文件存在。</li>
+<li>Host 配置中的扩展 ID 与 Chrome 显示的 ID 一致。</li>
+<li>Helper Python 存在。</li>
+<li>查看 <code>helper.log</code>。</li>
+</ol>
+<p>下面的命令查看 Host 配置：</p>
+<div class="highlight"><pre><span></span><code>cat "$HOME/Library/Application Support/Google/Chrome/NativeMessagingHosts/cn.transcript.generator.launcher.json"
+</code></pre></div>
+<p>下面的命令检查 Helper Python：</p>
+<div class="highlight"><pre><span></span><code>ls -l \
+          "$HOME/Library/Application Support/ObsidianWebClipperCNTranscript/helper/.venv/bin/python"
+</code></pre></div>
+<p>下面的命令查看日志：</p>
+<div class="highlight"><pre><span></span><code>tail -n 200 \
+          "$HOME/Library/Application Support/ObsidianWebClipperCNTranscript/logs/helper.log"
+</code></pre></div>
+<h3 id="147-1270018484-401">14.7 浏览器直接打开 <code>127.0.0.1:8484</code> 显示 401</h3>
+<p>这是正常的安全设计，不代表 Helper 损坏。</p>
+<p>Helper 每次启动都会生成临时会话令牌。扩展通过 Native Messaging 获得令牌后才能访问 API；浏览器地址栏直接访问没有令牌，因此会返回 HTTP 401。</p>
+<p>请使用扩展设置中的“启动”和连接状态验证，不要把直接访问根地址当作健康检查。</p>
+<h3 id="148-youtube-nsig-requested-format-is-not-available">14.8 YouTube 出现 <code>nsig</code> 或 <code>Requested format is not available</code></h3>
+<p>先确认 Node.js 路径：</p>
+<div class="highlight"><pre><span></span><code>command -v node
+        node --version
+</code></pre></div>
+<p>检查 Helper 使用的 yt-dlp 与 <code>yt-dlp-ejs</code>：</p>
+<div class="highlight"><pre><span></span><code>"$HOME/Library/Application Support/ObsidianWebClipperCNTranscript/helper/.venv/bin/python" \
+          -c "import importlib.metadata as m; print('yt-dlp', m.version('yt-dlp')); print('yt-dlp-ejs', m.version('yt-dlp-ejs'))"
+</code></pre></div>
+<p>本项目会把 Node 路径交给 yt-dlp，并启用 EJS 解析。不要只通过 Homebrew 安装另一个系统级 yt-dlp，因为 Helper 使用的是自己 <code>.venv</code> 中的 Python 包。</p>
+<p>如果平台策略变化导致依赖需要更新，优先升级到本项目的新 Release，不要随意修改 Helper 内部锁定依赖。</p>
+<h3 id="149">14.9 生成按钮没有出现</h3>
+<p>检查：</p>
+<ul>
+<li>当前页面是否为 Bilibili 或 YouTube 视频页。</li>
+<li>Transcript Generator 是否已启用。</li>
+<li>页面是否已经有可用平台字幕。</li>
+<li>当前打开的是不是正确的 Transcript 扩展。</li>
+<li>重新刷新视频页后再打开剪藏界面。</li>
+</ul>
+<p>有平台字幕时不显示本地生成按钮，是“原生字幕优先”的正常行为。</p>
+<h3 id="1410-transcript">14.10 transcript 已生成，但模板里没有内容</h3>
+<p>确认模板正文精确包含：</p>
+<div class="highlight"><pre><span></span><code>{{transcript}}
+</code></pre></div>
+<p>然后：</p>
+<ol>
+<li>确认当前选中的模板。</li>
+<li>切换模板后切回来。</li>
+<li>重新打开同一视频的剪藏界面。</li>
+<li>在变量检查器确认 <code>transcript</code> 已有内容。</li>
+</ol>
+<p>不要把 <code>transcript</code> 误写成 <code>transcipt</code>、<code>Transcript</code> 或其他拼写。</p>
+<h3 id="1411-cookies">14.11 自动读取 Cookies 没有反应</h3>
+<ol>
+<li>确认当前 Chrome 用户已经登录对应网站。</li>
+<li>选择“自动读取”。</li>
+<li>点击“读取并验证”。</li>
+<li>检查 Chrome 是否弹出 Cookies 权限申请。</li>
+<li>查看页面显示的成功数量或失败原因。</li>
+</ol>
+<p>公开测试视频先使用“不使用”，不要让 Cookie 问题干扰基本链路验证。</p>
+<h3 id="1412">14.12 弹窗关闭后看不到进度</h3>
+<p>任务仍会运行。重新打开同一个视频的剪藏界面，扩展会根据保存在本地的任务 ID 恢复状态。</p>
+<p>不要切换到另一个视频后期待看到原视频的任务结果；任务状态与视频 URL 关联。</p>
+<h2 id="15-ai-agent">15. 把问题交给 AI Agent 时怎么描述</h2>
+<p>不要只说“安装失败”。把系统、命令、路径和完整错误一起提供。</p>
+<p>可以使用下面的 Prompt：</p>
+<div class="highlight"><pre><span></span><code>请帮我诊断 Obsidian Web Clipper CN · Transcript 的 macOS 安装问题。
+
+        限制：
+        - 不使用 Docker。
+        - 不创建第二套 Homebrew。
+        - 不创建 LaunchAgent。
+        - 不删除文件，除非先向我说明并获得确认。
+
+        请先检查：
+        - uname -m
+        - command -v brew &amp;&amp; brew --prefix
+        - type -a brew
+        - command -v node &amp;&amp; node --version
+        - command -v uv &amp;&amp; uv --version
+        - Chrome 加载的扩展目录
+        - Native Messaging Host 文件
+        - Transcript Helper 日志
+        - tiny 模型目录
+
+        我的完整错误如下：
+        [在这里粘贴错误]
+
+        请定位根因，直接执行安全的检查和修复，并在每一步说明验证结果。
+</code></pre></div>
+<p>提交日志前删除或遮盖：</p>
+<ul>
+<li>Cookies。</li>
+<li>API Key。</li>
+<li>Chrome 个人资料路径。</li>
+<li>私有视频地址。</li>
+<li>Helper 会话令牌。</li>
+</ul>
+<h2 id="16">16. 最终验收清单</h2>
+<p>完成课程验证时逐项确认：</p>
+<ul>
+<li><code>uname -m</code> 与 Homebrew 安装位置匹配。</li>
+<li>Apple Silicon 只存在 <code>/opt/homebrew</code> 一套 Homebrew。</li>
+<li><code>node --version</code> 正常且版本不低于 18。</li>
+<li><code>uv --version</code> 正常。</li>
+<li>安装使用 <code>v0.3.0-macos.zip</code>，不是 <code>-chrome.zip</code>。</li>
+<li>Chrome 加载固定项目目录中的 <code>extension/dist</code>。</li>
+<li>Native Messaging Host 已注册。</li>
+<li>没有创建 Transcript LaunchAgent。</li>
+<li>Helper 可以由扩展按需启动。</li>
+<li>Helper 监听 <code>127.0.0.1:8484</code>。</li>
+<li>Faster Whisper 选择 <code>tiny</code>。</li>
+<li>tiny 模型状态显示已安装。</li>
+<li>没有平台字幕的 YouTube 视频可以进入音频下载阶段。</li>
+<li>Faster Whisper 可以完成本地识别。</li>
+<li>关闭弹窗不会取消任务。</li>
+<li>生成结果进入原有 <code>{{transcript}}</code> 变量。</li>
+<li>模板正文能显示 transcript。</li>
+<li>笔记可以保存到 Obsidian。</li>
+<li>设置中的“停止”可以结束 Helper。</li>
+<li>不主动停止时，Helper 会在空闲约 15 分钟后退出。</li>
+</ul>
+<h2 id="17">17. 数据位置与隐私边界</h2>
+<table>
+<thead>
+<tr>
+<th>数据</th>
+<th>位置</th>
+<th>是否上传</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>扩展设置</td>
+<td><code>chrome.storage.local</code></td>
+<td>否</td>
+</tr>
+<tr>
+<td>Bilibili / YouTube Cookies</td>
+<td><code>chrome.storage.local</code></td>
+<td>否</td>
+</tr>
+<tr>
+<td>Faster Whisper 模型</td>
+<td><code>~/.cache/obsidian-web-clipper-cn-transcript/models/</code></td>
+<td>否</td>
+</tr>
+<tr>
+<td>transcript 缓存</td>
+<td><code>~/.cache/obsidian-web-clipper-cn-transcript/transcripts/</code></td>
+<td>否</td>
+</tr>
+<tr>
+<td>临时音频</td>
+<td>macOS 临时目录</td>
+<td>任务后删除</td>
+</tr>
+<tr>
+<td>临时 cookiefile</td>
+<td>macOS 临时目录</td>
+<td>任务后删除</td>
+</tr>
+<tr>
+<td>Helper 日志</td>
+<td><code>~/Library/Application Support/ObsidianWebClipperCNTranscript/logs/</code></td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<p>Faster Whisper 模式下，音频和识别留在本机。</p>
+<p>如果改选 BCut，音频会上传到必剪的非官方公开接口；BCut 与 Faster Whisper 不会在失败时未经用户确认自动互相切换。</p>
+<h2 id="18">18. 官方参考</h2>
+<ul>
+<li>Transcript 项目：<a href="https://github.com/whatcccup/obsidian-web-clipper-cn-transcript">https://github.com/whatcccup/obsidian-web-clipper-cn-transcript</a></li>
+<li>Transcript v0.3.0 Release：<a href="https://github.com/whatcccup/obsidian-web-clipper-cn-transcript/releases/tag/v0.3.0">https://github.com/whatcccup/obsidian-web-clipper-cn-transcript/releases/tag/v0.3.0</a></li>
+<li>Homebrew 安装文档：<a href="https://docs.brew.sh/Installation">https://docs.brew.sh/Installation</a></li>
+<li>Homebrew 官网：<a href="https://brew.sh/">https://brew.sh/</a></li>
+<li>uv 安装文档：<a href="https://docs.astral.sh/uv/getting-started/installation/">https://docs.astral.sh/uv/getting-started/installation/</a></li>
+<li>Node.js 官网：<a href="https://nodejs.org/">https://nodejs.org/</a></li>
+<li>Obsidian：<a href="https://obsidian.md/">https://obsidian.md/</a></li>
+</ul>
+<p>本项目仅支持 macOS + Chrome/Chromium，不支持 Windows 或 Linux，也没有开发其他桌面系统版本的当前计划。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      内容采用 Markdown 维护 · 测测的 AI 笔记
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/tag-filter.js"></script>
+      
+    
+  </body>
+</html>
