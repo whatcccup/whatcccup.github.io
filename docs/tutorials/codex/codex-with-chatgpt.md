@@ -277,23 +277,7 @@ Ready.
 
 前面的安装和使用已经足够完成日常任务。原理只需要记住下面这一张图。
 
-```mermaid
-sequenceDiagram
-    actor User as 你
-    participant Codex as Codex
-    participant ChatGPT as ChatGPT
-    participant Workspace as 本地项目
-
-    User->>Codex: 提出任务
-    Codex->>ChatGPT: 请求规划
-    ChatGPT->>Workspace: 通过只读连接按需查看
-    Workspace-->>ChatGPT: 返回必要信息
-    ChatGPT-->>Codex: 给出计划
-    Codex->>Workspace: 修改文件 / 运行命令 / 测试
-    Codex->>ChatGPT: 提交执行结果
-    ChatGPT->>Workspace: 只读检查真实改动
-    ChatGPT-->>Codex: 完成或进入下一轮
-```
+![Codex with ChatGPT 运行原理泳道图](../../assets/codex-with-chatgpt/swimlane.png)
 
 核心分工只有两句：
 
